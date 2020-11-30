@@ -1,3 +1,36 @@
+body {
+  background-color: #1d1d1d !important;
+}
+
+body a{
+    color: #FF5700;
+    font-weight: 600;
+}
+
+.spacer{
+  margin-top: 100px !important;
+}
+.mainLaunch h1{
+font-size: 4em;
+}
+
+.mainLaunch .timer {
+    font-weight: 700;
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+span,
+p,
+b,
+i {
+  color: white;
+}
+
 ul.header {
   list-style-type: none;
   margin: 0;
@@ -14,13 +47,12 @@ ul.header li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14 px 16;
   text-decoration: none;
 }
 ul.header li a:hover:not(.active) {
   background-color: #111;
 }
-
 .selected {
   color: white !important;
 }
@@ -29,45 +61,31 @@ table,
 th,
 td {
   border-collapse: collapse;
-  border: 1px solid black;
+  border: 1 px solid black;
 }
-
 .floatLeft {
   float: left;
-  margin-left: 20px;
+  margin-left: 20 px;
 }
-
 .floatRight {
   position: absolute;
-  right: 0px;
-  margin-right: 10px;
-  margin-top: 6px;
+  right: 0 px;
+  margin-right: 10 px;
+  margin-top: 6 px;
   color: white;
 }
-
 .pageContent {
   margin: 2%;
 }
-
 .adminStyle {
   background: #0f2027; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit -linear -gradient(to bottom, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear -gradient(to bottom, #2c5364, #203a43, #0f2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 ul.header li span {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 16;
   text-decoration: none;
 }
