@@ -1,10 +1,38 @@
 import React, { useState, useEffect } from "react"
 import "./ca3.css";
+import { URLLaunchString } from "./settings";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
 
 
 
-const Home =() => {
+const Frontpage =() => {
+  
+  
+  const [launchString, setLaunchString] = useState([]);
+
+  // loads launchString first time
+  useEffect(() => {
+    fetchLaunchString();
+  }, []);
+
+  let fetchLaunchString = () => {
+    fetch(URLLaunchString)
+      .then((res) => res.json())
+      .then((data) => {
+        setLaunchString(data);
+      });
+  };
+
+  let launchNo = 2;
+  let launchServiceProviderName;
+  let location;
+
+  if (JSON.stringify(launchString).length > 100) {
+    launchServiceProviderName =
+      launchString.results[launchNo].launch_service_provider.name;
+    location = launchString.results[launchNo].pad.location.name;
+  }  
+  
     return (
         <div>
             <Container className="">
@@ -35,6 +63,15 @@ const Home =() => {
                 </div>
 
 
+        <Row className="text-center mt-2">
+          <Col className="col-xs-2"></Col>
+          <Col className="col-lg-8 mainLaunch">
+            <span>{launchServiceProviderName}</span>
+            <span>&nbsp; - &nbsp;</span>
+            <span>{location}</span>
+          </Col>
+          <Col className="col-xs-2"></Col>
+        </Row>
 
                 {/*TEST LAUNCHES*/}
 
@@ -208,4 +245,4 @@ const Home =() => {
     );
 };
 
-export default Home;
+export default Frontpage;

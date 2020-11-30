@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./style2.css";
 import "./ca3.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import {Navbar, Nav} from "react-bootstrap";
+import Frontpage from "./Home";
 import AllJokes from "./AllJokes";
 import AllScrape from "./AllScrape";
 import LaunchHome from "./Home";
@@ -11,9 +12,7 @@ import LaunchLocation from "./LaunchLocation";
 import LaunchWeather from "./LaunchWeather";
 import HeaderLaunch from "./HeaderLaunch";
 import Login from "./Login";
-import { Switch, Route, NavLink, useHistory } from "react-router-dom";
-
-
+import {Switch, Route, NavLink, useHistory} from "react-router-dom";
 
 const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
   return (
@@ -68,29 +67,28 @@ const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
             </>
           )}*/}
         </Nav>
-
-      </Navbar>
-    </>
-  );
+            </Navbar>
+        </>
+    );
 };
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [loginName, setLoginName] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [loginName, setLoginName] = useState('');
 
-  let history = useHistory();
+    let history = useHistory();
 
-  const setLoginStatus = (status, name) => {
-    setIsLoggedIn(status);
-    setLoginName(name);
-    history.push("/");
-  };
+    const setLoginStatus = (status, name) => {
+        setIsLoggedIn(status);
+        setLoginName(name);
+        history.push("/");
+    };
 
-  const setAdminStatus = (status) => {
-    setIsAdmin(status);
-    history.push("/");
-  };
+    const setAdminStatus = (status) => {
+        setIsAdmin(status);
+        history.push("/");
+    };
 
   return (
     <div className="pageContent">
@@ -125,8 +123,6 @@ export default function App() {
             <Weather />
           </Route>
 
-
-
           <Route path="/admin">
             <Admin />
           </Route>
@@ -142,33 +138,35 @@ export default function App() {
       </div>
     </div>
   );
+
 }
 
 // You can think of these components as "pages"
 // in your app.
 
 function Home() {
-  return (
-    <div className="pageContent">
-      <LaunchHome />
-    </div>
-  );
+
+    return (
+        <div className="pageContent">
+            <Frontpage/>
+        </div>
+    );
 }
 
 function Jokes() {
-  return (
-    <div className="pageContent">
-      <AllJokes />
-    </div>
-  );
+    return (
+        <div className="pageContent">
+            <AllJokes/>
+        </div>
+    );
 }
 
 function Scrape() {
-  return (
-    <div className="pageContent">
-      <AllScrape />
-    </div>
-  );
+    return (
+        <div className="pageContent">
+            <AllScrape/>
+        </div>
+    );
 }
 
 function Admin() {
