@@ -1,40 +1,63 @@
 import React, { useState } from "react";
 import "./style2.css";
+import "./ca3.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import AllJokes from "./AllJokes";
 import AllScrape from "./AllScrape";
+import LaunchHome from "./Home";
+import LaunchInformation from "./LaunchInformation";
+import LaunchLocation from "./LaunchLocation";
+import LaunchWeather from "./LaunchWeather";
+import HeaderLaunch from "./HeaderLaunch";
 import Login from "./Login";
 import { Switch, Route, NavLink, useHistory } from "react-router-dom";
+
+
 
 const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" id="header">
-        <Navbar.Brand href="#home">Hold E, Gruppe 8</Navbar.Brand>
-        <Nav className="mr-auto">
-          <NavLink className="nav-link" exact activeClassName="selected" href="/" to="/">
+      <Navbar   variant="dark" id="header">
+        
+        <Nav className="ca3NavbarBig m-auto">
+          
+          <NavLink className="nav-link ca3NavbarBig" exact activeClassName="selected" href="/" to="/">
             Home
         </NavLink>
-          <NavLink className="nav-link" activeClassName="selected" to="/jokes">
+
+        {/** 
+          <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/jokes">
             Jokes
+        </NavLink>*/}
+      
+          <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/information">
+            Information
+        </NavLink>
+        <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/location">
+            Location
+        </NavLink>
+        <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/weather">
+            Weather
         </NavLink>
 
+
+          {/** 
           {isLoggedIn && (
-            <NavLink className="nav-link" activeClassName="selected" to="/scrape" href="/scrape">
+            <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/scrape" href="/scrape">
               Scrape
             </NavLink>
           )}
           {isAdmin && (
             <>
               <li>
-                <NavLink className="nav-link" activeClassName="selected" to="/admin">
+                <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/admin">
                   Admin
             </NavLink>
               </li>
             </>
           )}
-          <NavLink className="nav-link" activeClassName="selected" to="/login-out">
+          <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/login-out">
             {loginMsg}
           </NavLink>
           {isLoggedIn && (
@@ -43,7 +66,7 @@ const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
                 <span>Logged in as {loginName}</span>
               </li>
             </>
-          )}
+          )}*/}
         </Nav>
 
       </Navbar>
@@ -70,7 +93,8 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className="pageContent">
+      <HeaderLaunch />
       <Header
         loginMsg={isLoggedIn ? "Logout" : "Login"}
         isLoggedIn={isLoggedIn}
@@ -89,6 +113,20 @@ export default function App() {
           <Route path="/scrape">
             <Scrape />
           </Route>
+
+
+          <Route path="/information">
+            <Information/>
+          </Route>
+          <Route path="/Location">
+            <Location />
+          </Route>
+          <Route path="/Weather">
+            <Weather />
+          </Route>
+
+
+
           <Route path="/admin">
             <Admin />
           </Route>
@@ -112,7 +150,7 @@ export default function App() {
 function Home() {
   return (
     <div className="pageContent">
-      <h2>Home</h2>
+      <LaunchHome />
     </div>
   );
 }
@@ -137,6 +175,29 @@ function Admin() {
   return (
     <div className="pageContent">
       <h2>Admin</h2>
+    </div>
+  );
+}
+
+function Information() {
+  return (
+    <div className="pageContent">
+     <LaunchInformation />
+
+    </div>
+  );
+}
+function Location() {
+  return (
+    <div className="pageContent">
+      <LaunchLocation />
+    </div>
+  );
+}
+function Weather() {
+  return (
+    <div className="pageContent">
+      <LaunchWeather />
     </div>
   );
 }
