@@ -6,9 +6,14 @@ import { BrowserRouter as Router} from 'react-router-dom';
 
 const AppWithRouter = () => {
   return (
+    <div className="pageContent">
 <Router>
   <App/>
 </Router>
+
+</div>
+
+
   );
 };
 ReactDOM.render(<AppWithRouter/>, document.getElementById('root'));

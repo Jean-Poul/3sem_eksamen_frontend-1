@@ -1,0 +1,227 @@
+.pageContent {
+   
+    text-align: center;
+    background-color: #1D1D1D;
+    font-family: 'Unispace', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  }
+
+/*-------------------------
+FONT COLOUR
+---------------------------*/
+
+.ca3White {
+    color: #ffffff;
+    
+}
+.ca3Green {
+    color: #0FEF4B;
+    
+}
+.ca3Lime {
+    color: #C4EF0F;
+    
+}
+
+.ca3Orange {
+    color: #FF5700;
+    
+}
+.ca3Red {
+    color: #FF0000;
+   
+}
+
+
+
+/*-------------------------
+LOGIN HEADER
+---------------------------*/
+.ca3Login{
+    text-align:right;
+    float: right;
+}
+
+
+
+/*-------------------------
+LAUNCH HEADER
+---------------------------*/
+
+ .ca3LaunchBig {
+    font-size: 60px;
+    color: #FFFFFF;
+    text-align: center;
+}
+ .ca3CDBig {
+     display:inline;
+    text-align: center;
+    font-size: 45px;
+    
+}
+
+.ca3LaunchinfoBig {
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+
+.ca3NavbarBig {
+    font-size: 22px !important;
+    color: #FF5700 !important;
+       
+}
+
+.ca3NavbarSmall {
+    font-size: 16 px;
+    color: #FF5700;
+}
+
+a:hover {
+    color: #C4EF0F !important;
+}
+
+.selected {
+    color:#0FEF4B !important;
+  }
+/*-------------------------
+Launch HOME
+---------------------------*/
+
+.ca3CDSmall {
+    text-align: center;
+    font-size: 22px;
+    color: #0BF378;
+
+}
+
+.ca3LaunchSmall {
+    font-size: 28px;
+    color: #FFFFFF
+}
+
+.ca3LaunchinfoSmall {
+    font-size: 16 px;
+    color: #FFFFFF;
+    text-align: Center;
+}
+
+
+
+
+/*-------------------------
+bread text
+---------------------------*/
+
+.inline{
+    display:flex;
+}
+
+.ca3h1 {
+    color: #EF5713;
+    font-size: 25px;
+    text-align: right;
+    
+}
+.ca3P {
+    color: #FFFFFF;
+    font-size: 25px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.ca3MDetails {
+    color: #FFFFFF;
+    font-size: 25px;
+    text-align: left;
+    
+}
+
+.ca3Hr{
+    border-top: 2px solid #707070;
+    width: 70%;
+}
+
+
+/*-------------------------
+IMG
+--------------------------*/
+
+.img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin: 0 auto;
+}
+.img2{
+    
+  margin-left: auto;
+  margin-right: auto;
+  width: 140% !important;
+  margin: 0 auto;
+}
+.imgLogo{
+    text-align: center;
+    display: block;
+    margin: auto;
+    width: 60% !important;
+    
+  }
+
+.main-wrapper {
+    margin-left: 20%;
+  }
+
+.imgRocket{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+
+/*-------------------------
+comments section 
+---------------------------*/
+
+.ca3CommentName {
+    display: inline;
+    font-size: 20px;
+    color: #FF5700;
+    float: left;
+    
+    
+}
+
+.ca3CommentInfo {
+    display: inline;
+    font-size: 17px;
+    color: #828282;
+}
+
+.ca3Comment {
+    font-size: 16px;
+    color: #FFFFFF;
+    float: left;
+    text-align: left;
+}
+
+.ca3Submit {
+    margin-right: 20px;
+    margin-top: 10px;
+    float: right;
+    font-size: 18px;
+    color: #FF5700 ;
+    margin-bottom: 100px;
+    background-color: transparent !important;
+    border-color: #5bc2c2
+}
+
+.submit {
+    color: #FF5700 !important;
+    font-size: 18px !important;
+  
+}
+
+

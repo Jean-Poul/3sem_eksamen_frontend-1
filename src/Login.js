@@ -23,6 +23,7 @@ function LogIn({ login }) {
           <Col>
           </Col>
           <Col>
+          
             <h2>Login</h2>
             <Form onChange={onChange} className="mt-4">
               <Form.Group controlId="loginForm">

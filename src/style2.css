@@ -54,7 +54,11 @@ ul.header li a:hover:not(.active) {
   background-color: #111;
 }
 .selected {
-  color: white !important;
+  color:#C4EF0F !important;
+}
+
+.ca3siteBody {
+  margin-left: -20% !important;
 }
 
 table,
@@ -76,6 +80,8 @@ td {
 }
 .pageContent {
   margin: 2%;
+  text-align: center;
+  background-color: #1D1D1D;
 }
 .adminStyle {
   background: #0f2027; /* fallback for old browsers */
