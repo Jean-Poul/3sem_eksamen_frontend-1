@@ -128,7 +128,7 @@ bread text
     color: #FFFFFF;
     font-size: 25px;
     text-align: left;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 .ca3MDetails {
