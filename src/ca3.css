@@ -221,7 +221,7 @@ comments section
 .submit {
     color: #FF5700 !important;
     font-size: 18px !important;
-  
+    background-color: transparent !important;
 }
 
 
