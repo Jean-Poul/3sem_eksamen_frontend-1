@@ -59,7 +59,7 @@ const LaunchInformation =() => {
 
                 <Col sm={4}>
                     <div className="ca3h1">
-                        Vehicle:<br/>
+                        Rocket:<br/>
                     </div>
                 </Col>
 
