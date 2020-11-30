@@ -14,7 +14,7 @@ const HeaderLaunch =() => {
                 <Col sm={9}></Col>
                 <Col sm={1}><div className="ca3White ca3Login">Login</div></Col>
                 </Row>
-                <img src={rocketlaunchlogo}  className="imgLogo"/> <br/>
+                <img src={rocketlaunchlogo} className="imgLogo"/> <br/>
                 <div className="ca3LaunchBig">Launch In</div>
                 <span className="ca3CDBig">
                     <span className="ca3Green">00</span>
