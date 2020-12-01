@@ -72,17 +72,18 @@ export const WriteComment = () => {
 
     return (
         <div>
-            <Row>
-                <Col sm={2}></Col>
-                <Col sm={8}>
-                    <div class="col-xs-4">
 
-                        <textarea class="form-control" id="Comment" rows="5" placeholder="Enter username"></textarea>
-                    </div>
-                    <div className="ca3Submit">
-
-                        <Button onClick={submitComment} class="btn submit" variant="primary" type="submit">
-                            Submit
+        <Row>
+        <Col sm={2}></Col>
+        <Col sm={8}>
+        <div class="col-xs-4">
+            
+            <textarea class="form-control" id="Comment" rows="5" placeholder="Enter username"></textarea>
+        </div>     
+                <div className="ca3Submit">
+                    
+                <Button onClick={submitComment} class="btn btn-link submit" variant="primary"  type="submit">
+                Submit
                 </Button>
                     </div>
                 </Col>
