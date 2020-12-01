@@ -39,8 +39,8 @@ const Comments = () => {
                                                 </div>
                                             </div>
                                         </Row>
-                                        <div className="ca3Comment">Id:{data.id} &nbsp;</div>
-                                        <div className="ca3Comment">comment: {data.userComment} &nbsp;</div>
+                                        {/* <div className="ca3Comment">Id:{data.id} &nbsp;</div> */}
+                                        <div className="ca3Comment">{data.userComment} &nbsp;</div>
                                         <br />
                                     </div>
                                 )}
