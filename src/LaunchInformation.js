@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import "./ca3.css";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
-import Comments, {WriteComment} from './Comments';
+import Comments, { WriteComment } from './Comments';
 import LaunchString, {date,launchtime, location, provlogo,launchServiceProviderName, provtype, missionname, missiondetails,missiontype ,rocket,rocketimg}  from "./LaunchString";
 
 
-const LaunchInformation =() => {
+const LaunchInformation = () => {
     return (
         <div >
             <LaunchString/>
             <Container className="">
                 <Row className="ca3siteBody">
-                    
+
                     <Col sm={4}>
                         <div className="ca3h1">
-                            Date: <br/>
-                            Estimated Launch:<br/>
-                            Location:<br/>
+                            Date: <br />
+                            Estimated Launch:<br />
+                            Location:<br />
                         </div>
                     </Col>
                     <Col sm={8}>
@@ -27,12 +27,12 @@ const LaunchInformation =() => {
                         </div>
                     </Col>
                 </Row>
-                
+
                 <Col>
-                    <br/>
+                    <br />
                     <img src="https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/spacex_logo_20191121063502.png" className="img"></img>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                 </Col>
                 <Row className="ca3siteBody">
 
@@ -58,8 +58,8 @@ const LaunchInformation =() => {
                     <div className="ca3MDetails">
                     {missiondetails}<br/>
                     </div>
-                    <br/>
-                </Col>
+                        <br />
+                    </Col>
 
                 <Col sm={4}>
                     <div className="ca3h1">
@@ -71,29 +71,23 @@ const LaunchInformation =() => {
                     <div className="ca3P">
                         {rocket}<br/>
 
-                    </div>
-                </Col>
-
-                
                 </Row>
                 <Col>
-                    <br/>
+                    <br />
                     <img src="https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/agency_images/arianespace_image_20190207032425.jpeg" className="imgRocket"></img>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                 </Col>
             </Container>
-            
-            <hr className="ca3Hr"/>
-            <br/>
+
+            <hr className="ca3Hr" />
+            <br />
             <div className="ca3LaunchSmall">Comment Section</div>
             <Container>
                 <Comments />
-                <Comments />
-                <Comments />
-                <WriteComment/>
+                <WriteComment />
             </Container>
-            
+
         </div>
     );
 };
