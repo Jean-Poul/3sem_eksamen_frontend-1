@@ -33,14 +33,14 @@ const Comments = () => {
                                     <div key={data.id}>
                                         <Row>
                                             <div>
-                                                <div className="ca3CommentName">Blastoff34
+                                                <div className="ca3CommentName">Blastoff34 {data.userName}
                                                 &nbsp;
-                                                <div className="ca3CommentInfo">Commented @ 14:32 24th November</div>
+                                                <div className="ca3CommentInfo">Commented @ {data.created}</div>
                                                 </div>
                                             </div>
                                         </Row>
                                         <div className="ca3Comment">Id:{data.id} &nbsp;</div>
-                                        <div className="ca3Comment">comment: {data.userComment}</div>
+                                        <div className="ca3Comment">comment: {data.userComment} &nbsp;</div>
                                         <br />
                                     </div>
                                 )}
@@ -73,17 +73,17 @@ export const WriteComment = () => {
     return (
         <div>
 
-        <Row>
-        <Col sm={2}></Col>
-        <Col sm={8}>
-        <div class="col-xs-4">
-            
-            <textarea class="form-control" id="Comment" rows="5" placeholder="Enter username"></textarea>
-        </div>     
-                <div className="ca3Submit">
-                    
-                <Button onClick={submitComment} class="btn btn-link submit" variant="primary"  type="submit">
-                Submit
+            <Row>
+                <Col sm={2}></Col>
+                <Col sm={8}>
+                    <div class="col-xs-4">
+
+                        <textarea class="form-control" id="Comment" rows="5" placeholder="Enter username"></textarea>
+                    </div>
+                    <div className="ca3Submit">
+
+                        <Button onClick={submitComment} class="btn btn-link submit" variant="primary" type="submit">
+                            Submit
                 </Button>
                     </div>
                 </Col>
