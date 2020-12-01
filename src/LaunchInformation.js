@@ -1,9 +1,46 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./ca3.css";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
-import Comments, {WriteComment} from './Comments';
-import LaunchString, {date,launchtime, location, provlogo,launchServiceProviderName, provtype, missionname, missiondetails,missiontype ,rocket,rocketimg}  from "./LaunchString";
+import Comments, { WriteComment } from "./Comments";
+import LaunchString, {
+  date,
+  launchtime,
+  location,
+  provlogo,
+  launchServiceProviderName,
+  provtype,
+  missionname,
+  missiondetails,
+  missiontype,
+  rocket,
+  rocketimg,
+} from "./LaunchString";
 
+const LaunchInformation = () => {
+  return (
+    <div>
+      <LaunchString />
+      <Container className="">
+        <Row className="ca3siteBody">
+          <Col sm={4}>
+            <div className="ca3h1">
+              Date: <br />
+              Estimated Launch:
+              <br />
+              Location:
+              <br />
+            </div>
+          </Col>
+          <Col sm={8}>
+            <div className="ca3P">
+              {date} <br />
+              {launchtime}
+              <br />
+              {location}
+              <br />
+            </div>
+          </Col>
+        </Row>
 
 const LaunchInformation =() => {
     return (
@@ -95,6 +132,5 @@ const LaunchInformation =() => {
         </div>
     );
 };
-
 
 export default LaunchInformation;
