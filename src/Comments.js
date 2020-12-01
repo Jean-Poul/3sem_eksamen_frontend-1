@@ -10,9 +10,9 @@ const Comments =() => {
             <Col sm={2}></Col>
             <Col sm={8}>  
                  <div>
-                    <div className="ca3CommentName">Blastoff34
+                    <div className="ca3CommentName ca3Orange">Blastoff34
                     &nbsp;
-                    <div className="ca3CommentInfo">Commented @ 14:32 24th November</div>
+                    <div className="ca3CommentInfo ca3Grey">Commented @ 14:32 24th November</div>
                  </div>
                 </div>
             </Col>
@@ -21,7 +21,7 @@ const Comments =() => {
         <Row>
             <Col sm={2}></Col>
             <Col sm={8}>  
-                    <div className="ca3Comment">I can't wait for this launch! MY ENTIRE LIFE HAS LET UP TO THIS MOMENT!</div>
+                    <div className="ca3Comment ca3White">I can't wait for this launch! MY ENTIRE LIFE HAS LET UP TO THIS MOMENT!</div>
                     <br/>  <br/><br/>
             </Col>
             <Col sm={2}></Col>
@@ -52,11 +52,11 @@ export const WriteComment =() => {
         <Col sm={8}>
         <div class="col-xs-4">
             
-            <textarea class="form-control" id="Comment" rows="5" placeholder="Enter username"></textarea>
+            <textarea class="form-control" id="Comment" rows="5" placeholder="Enter comment here"></textarea>
         </div>     
-                <div className="ca3Submit">
+                <div className="ca3Submit ca3Orange">
                     
-                <Button onClick={submitComment} class="btn btn-link submit" variant="primary"  type="submit">
+                <Button onClick={submitComment} class="btn btn-link"  className="ca3Submit ca3Orange"variant="primary"  type="submit">
                 Submit
                 </Button>
                 </div>

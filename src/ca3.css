@@ -12,27 +12,25 @@ FONT COLOUR
 ---------------------------*/
 
 .ca3White {
-    color: #ffffff;
-    
+    color: #ffffff !important;
 }
 .ca3Green {
-    color: #0FEF4B;
-    
+    color: #0FEF4B !important;
 }
 .ca3Lime {
-    color: #C4EF0F;
-    
+    color: #C4EF0F !important;
 }
 
 .ca3Orange {
-    color: #FF5700;
-    
+    color: #FF5700 !important;
 }
 .ca3Red {
-    color: #FF0000;
-   
+    color: #FF0000 !important;
 }
 
+.ca3Grey {
+    color: #828282 !important;
+}
 
 
 /*-------------------------
@@ -43,15 +41,12 @@ LOGIN HEADER
     float: right;
 }
 
-
-
 /*-------------------------
 LAUNCH HEADER
 ---------------------------*/
 
  .ca3LaunchBig {
     font-size: 45px;
-    color: #FFFFFF;
     text-align: center;
 }
  .ca3CDBig {
@@ -63,19 +58,14 @@ LAUNCH HEADER
 
 .ca3LaunchinfoBig {
     font-size: 25px;
-    color: #FFFFFF;
 }
-
 
 .ca3NavbarBig {
     font-size: 22px !important;
-    color: #FF5700 !important;
-       
 }
 
 .ca3NavbarSmall {
     font-size: 16 px;
-    color: #FF5700;
 }
 
 a:hover {
@@ -92,18 +82,14 @@ Launch HOME
 .ca3CDSmall {
     text-align: center;
     font-size: 22px;
-    color: #0BF378;
-
 }
 
 .ca3LaunchSmall {
     font-size: 28px;
-    color: #FFFFFF
 }
 
 .ca3LaunchinfoSmall {
     font-size: 16 px;
-    color: #FFFFFF;
     text-align: Center;
 }
 
@@ -119,23 +105,13 @@ bread text
 }
 
 .ca3h1 {
-    color: #EF5713;
     font-size: 25px;
     text-align: right;
-    
 }
 .ca3P {
-    color: #FFFFFF;
     font-size: 25px;
     text-align: left;
     /*white-space: nowrap;*/
-}
-
-.ca3MDetails {
-    color: #FFFFFF;
-    font-size: 25px;
-    text-align: left;
-    
 }
 
 .ca3Hr{
@@ -167,7 +143,6 @@ IMG
     display: block;
     margin: auto;
     width: 40% !important;
-    
   }
 
 .main-wrapper {
@@ -188,40 +163,26 @@ comments section
 .ca3CommentName {
     display: inline;
     font-size: 20px;
-    color: #FF5700;
     float: left;
-    
-    
 }
 
 .ca3CommentInfo {
     display: inline;
     font-size: 17px;
-    color: #828282;
 }
 
 .ca3Comment {
     font-size: 16px;
-    color: #FFFFFF;
     float: left;
     text-align: left;
 }
 
 .ca3Submit {
-    margin-right: 20px;
-    margin-top: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
     float: right;
-    font-size: 18px;
-    color: #FF5700 ;
+    font-size: 18px !important;
     margin-bottom: 100px;
     background-color: transparent !important;
-    border-color: #5bc2c2
+    border-color: transparent  !important;
 }
-
-.submit {
-    color: #FF5700 !important;
-    font-size: 18px !important;
-    background-color: transparent !important;
-}
-
-

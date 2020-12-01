@@ -13,7 +13,7 @@ const LaunchLocation =() => {
                 <Row className="ca3siteBody">
                     
                     <Col sm={4}>
-                        <div className="ca3h1">
+                        <div className="ca3h1 ca3Orange">
                             Location: <br/>
                             Country:<br/>
                             wiki link:<br/>
@@ -23,10 +23,10 @@ const LaunchLocation =() => {
                         </div>
                     </Col>
                     <Col sm={8}>
-                        <div className="ca3P">
+                        <div className="ca3P ca3White">
                             {location}<br/>
                             {countrycode}<br/>
-                            <a href={wikilink}>Cape Canaveral</a> <br/> <br/>
+                            <a href={wikilink} className="ca3Green">Link</a> <br/> <br/>
                             {latitude}<br/>
                             {longitude}<br/>
                         </div>

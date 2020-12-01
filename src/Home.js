@@ -19,8 +19,8 @@ const Frontpage =() => {
                 <div id="L0">
                     <span className="ca3CDBig ca3White">Next 9 Launches</span>
                     <br/><br/>
-                    <div className="ca3LaunchSmall">Launch In</div>
-                    <span className="ca3CDSmall">
+                    <div className="ca3LaunchSmall ca3White">Launch In</div>
+                    <span className="ca3CDSmall ca3Green">
                         <span className="ca3Lime">00</span>
                         <span className="ca3White">d:</span>
                         <span className="ca3Lime">00</span>
@@ -31,8 +31,8 @@ const Frontpage =() => {
                         <span className="ca3White">s</span>
                     </span>
 
-                    <div className="ca3LaunchinfoSmall">
-                    <span>{launchServiceProviderName} - </span><br/>
+                    <div className="ca3LaunchinfoSmall ca3White">
+                    <span>{launchServiceProviderName}</span><br/>
                      <span>{location}</span><br/>
                      <span>{countrycode}</span>
                     </div>
@@ -42,7 +42,7 @@ const Frontpage =() => {
                 {/*TEST LAUNCHES*/}
 
                 <div id="L1">
-                    <div className="ca3LaunchSmall">Launch In</div>
+                    <div className="ca3LaunchSmall ca3White">Launch In</div>
                     <span className="ca3CDSmall">
                         <span className="ca3Orange">02</span>
                         <span className="ca3White">d:</span>
@@ -54,13 +54,13 @@ const Frontpage =() => {
                         <span className="ca3White">s</span>
                     </span>
 
-                    <div className="ca3LaunchinfoSmall">
+                    <div className="ca3LaunchinfoSmall ca3White">
                     United Launch Alliance - Cape Canaveral fl, USA
                     </div>
                     <br />
                 </div>
                 <div id="L2">
-                    <div className="ca3LaunchSmall">Launch In</div>
+                    <div className="ca3LaunchSmall ca3White" >Launch In</div>
                     <span className="ca3CDSmall">
                         <span className="ca3Red">03</span>
                         <span className="ca3White">d:</span>
@@ -72,13 +72,13 @@ const Frontpage =() => {
                         <span className="ca3White">s</span>
                     </span>
 
-                    <div className="ca3LaunchinfoSmall">
+                    <div className="ca3LaunchinfoSmall ca3White">
                     Indian Space Research Organization - Satish Dhawan Space Centre First Launch Pad
                     </div>
                     <br />
                 </div>
                 <div id="L3">
-                    <div className="ca3LaunchSmall">Launch In</div>
+                    <div className="ca3LaunchSmall ca3White">Launch In</div>
                     <span className="ca3CDSmall">
                         <span className="ca3Red">14</span>
                         <span className="ca3White">d:</span>
@@ -90,13 +90,13 @@ const Frontpage =() => {
                         <span className="ca3White">s</span>
                     </span>
 
-                    <div className="ca3LaunchinfoSmall">
+                    <div className="ca3LaunchinfoSmall ca3White">
                     LandSpace - Jiuquan, People's Republic of China
                     </div>
                     <br />
                 </div>
                 <div id="L4">
-                    <div className="ca3LaunchSmall">Launch In</div>
+                    <div className="ca3LaunchSmall ca3White">Launch In</div>
                     <span className="ca3CDSmall">
                         <span className="ca3Red">23</span>
                         <span className="ca3White">d:</span>
@@ -108,13 +108,13 @@ const Frontpage =() => {
                         <span className="ca3White">s</span>
                     </span>
 
-                    <div className="ca3LaunchinfoSmall">
+                    <div className="ca3LaunchinfoSmall ca3White">
                     United Launch Alliance - Vandenberg AFB, CA, USA
                     </div>
                     <br />
                 </div>
                 <div id="L5">
-                    <div className="ca3LaunchSmall">Launch In</div>
+                    <div className="ca3LaunchSmall ca3White">Launch In</div>
                     <span className="ca3CDSmall">
                         <span className="ca3Red">27</span>
                         <span className="ca3White">d:</span>
@@ -126,80 +126,80 @@ const Frontpage =() => {
                         <span className="ca3White">s</span>
                     </span>
 
-                    <div className="ca3LaunchinfoSmall">
+                    <div className="ca3LaunchinfoSmall ca3White">
                     Russian Space Forces - Plesetsk Cosmodrome, Russian Federation
                     </div>
                     <br />
                 </div>
 
                 <div id="L6">
-                    <div className="ca3LaunchSmall">Launch In</div>
-                    <div className="ca3CDSmall">
-                        <div className="ca3Red">32</div>
-                        <div className="ca3White">d:</div>
-                        <div className="ca3Orange">17</div>
-                        <div className="ca3White">h:</div>
-                        <div className="ca3Lime">15</div>
-                        <div className="ca3White">m:</div>
-                        <div className="ca3Green">14</div>
-                        <div className="ca3White">s</div>
-                    </div>
+                    <div className="ca3LaunchSmall ca3White">Launch In</div>
+                    <span className="ca3CDSmall">
+                    <span className="ca3Red">32</span>
+                    <span className="ca3White">d:</span>
+                    <span className="ca3Orange">17</span>
+                    <span className="ca3White">h:</span>
+                    <span className="ca3Lime">15</span>
+                    <span className="ca3White">m:</span>
+                    <span className="ca3Green">14</span>
+                    <span className="ca3White">s</span>
+                    </span>
 
-                    <div className="ca3LaunchinfoSmall">
+                    <div className="ca3LaunchinfoSmall ca3White">
                     SpaceX - Unknown Location
                     </div>
                     <br />
                 </div>
                 <div id="L7">
-                    <div className="ca3LaunchSmall">Launch In</div>
-                    <div className="ca3CDSmall">
-                        <div className="ca3Red">47</div>
-                        <div className="ca3White">d:</div>
-                        <div className="ca3Orange">26</div>
-                        <div className="ca3White">h:</div>
-                        <div className="ca3Lime">05</div>
-                        <div className="ca3White">m:</div>
-                        <div className="ca3Green">26</div>
-                        <div className="ca3White">s</div>
-                    </div>
+                    <div className="ca3LaunchSmall ca3White">Launch In</div>
+                    <span className="ca3CDSmall">
+                    <span className="ca3Red">47</span>
+                    <span className="ca3White">d:</span>
+                    <span className="ca3Orange">26</span>
+                    <span className="ca3White">h:</span>
+                    <span className="ca3Lime">05</span>
+                    <span className="ca3White">m:</span>
+                    <span className="ca3Green">26</span>
+                    <span className="ca3White">s</span>
+                    </span>
 
-                    <div className="ca3LaunchinfoSmall">
+                    <div className="ca3LaunchinfoSmall ca3White">
                     Rocket Lab Ltd - Onenui Station, Mahia Peninsula, New Zealand
                     </div>
                     <br />
                 </div>
                 <div id="L8">
-                    <div className="ca3LaunchSmall">Launch In</div>
-                    <div className="ca3CDSmall">
-                        <div className="ca3Red">56</div>
-                        <div className="ca3White">d:</div>
-                        <div className="ca3Orange">09</div>
-                        <div className="ca3White">h:</div>
-                        <div className="ca3Lime">21</div>
-                        <div className="ca3White">m:</div>
-                        <div className="ca3Green">56</div>
-                        <div className="ca3White">s</div>
-                    </div>
+                    <div className="ca3LaunchSmall ca3White">Launch In</div>
+                    <span className="ca3CDSmall">
+                    <span className="ca3Red">56</span>
+                    <span className="ca3White">d:</span>
+                    <span className="ca3Orange">09</span>
+                    <span className="ca3White">h:</span>
+                    <span className="ca3Lime">21</span>
+                    <span className="ca3White">m:</span>
+                    <span className="ca3Green">56</span>
+                    <span className="ca3White">s</span>
+                    </span>
 
-                    <div className="ca3LaunchinfoSmall">
+                    <div className="ca3LaunchinfoSmall ca3White">
                     SpaceX - South Texas Launch Site
                     </div>
                     <br />
                 </div>
                 <div id="L9">
-                    <div className="ca3LaunchSmall">Launch In</div>
-                    <div className="ca3CDSmall">
-                        <div className="ca3Red">69</div>
-                        <div className="ca3White">d:</div>
-                        <div className="ca3Orange">11</div>
-                        <div className="ca3White">h:</div>
-                        <div className="ca3Lime">43</div>
-                        <div className="ca3White">m:</div>
-                        <div className="ca3Green">32</div>
-                        <div className="ca3White">s</div>
-                    </div>
+                    <div className="ca3LaunchSmall ca3White">Launch In</div>
+                    <span className="ca3CDSmall">
+                    <span className="ca3Red">69</span>
+                    <span className="ca3White">d:</span>
+                    <span className="ca3Orange">11</span>
+                    <span className="ca3White">h:</span>
+                    <span className="ca3Lime">43</span>
+                    <span className="ca3White">m:</span>
+                    <span className="ca3Green">32</span>
+                    <span className="ca3White">s</span>
+                    </span>
 
-                    <div className="ca3LaunchinfoSmall">
+                    <div className="ca3LaunchinfoSmall ca3White">
                         SpaceX - Cape Canaveral Air Force Station - SLC 40, USA
                     </div>
                     <br />

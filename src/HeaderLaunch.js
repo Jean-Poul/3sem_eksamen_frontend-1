@@ -15,7 +15,7 @@ const HeaderLaunch =() => {
                 <Col sm={1}><div className="ca3White ca3Login">Login</div></Col>
                 </Row>
                 <img src={rocketlaunchlogo} className="imgLogo"/> <br/>
-                <div className="ca3LaunchBig">Launch In</div>
+                <div className="ca3LaunchBig ca3White">Launch In</div>
                 <span className="ca3CDBig">
                     <span className="ca3Green">00</span>
                     <span className="ca3White">d:</span>
@@ -27,7 +27,7 @@ const HeaderLaunch =() => {
                     <span className="ca3White">s</span>
                 </span>
 
-                <div className="ca3LaunchinfoBig">
+                <div className="ca3LaunchinfoBig ca3White">
                 SpaceX - Cape Canaveral Air Force Station - SLC 40, USA
                 </div>
             </Container>

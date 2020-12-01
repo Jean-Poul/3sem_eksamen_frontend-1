@@ -22,8 +22,8 @@ export let missionname;
 export let missiondetails;
 export let missiontype;
 export let rocket;
-export let rocketimg
-
+export let rocketimg;
+export let rocketimgInfo;
 
 
 const LaunchString =() => {
@@ -44,7 +44,7 @@ const LaunchString =() => {
       });
   };
 
-  let launchNo = 2;
+  let launchNo = 1;
  
 
   if (JSON.stringify(launchString).length > 100) {
@@ -52,7 +52,7 @@ const LaunchString =() => {
     location = launchString.results[launchNo].pad.location.name;
     countrycode = launchString.results[launchNo].pad.location.country_code;
     
-    wikilink = launchString.results[launchNo].pad.url.wiki_url;
+    wikilink = launchString.results[launchNo].pad.wiki_url;
     latitude = launchString.results[launchNo].pad.latitude;
     longitude = launchString.results[launchNo].pad.longitude;
 
@@ -65,17 +65,19 @@ const LaunchString =() => {
     missionname = launchString.results[launchNo].mission.name;
     missiondetails = launchString.results[launchNo].mission.description;
     rocket = launchString.results[launchNo].rocket.configuration.full_name;
-    rocketimg = launchString.results[launchNo].rocket.configuration.url.description;
+    rocketimg = launchString.results[launchNo].image;
+    rocketimgInfo = launchString.results[launchNo].infographic;
   }
 
   console.log("launch service provider:" +launchServiceProviderName);
   console.log("location " +location);
-  console.log("countrycode" + countrycode);
+  console.log("countrycode " + countrycode);
   console.log("wikilink " + wikilink);
   console.log("lattitude " + latitude);
   console.log("longitude " + longitude);
   console.log("date " + date);
   console.log("launchtime "+ launchtime);
+  console.log("provwiki " + provwiki);
   console.log("provlogo " + provlogo);
   console.log("provtype " + provtype);
   console.log("missionname " + missionname);
@@ -83,7 +85,7 @@ const LaunchString =() => {
   console.log("missiontype " + missiontype);
   console.log("rocket " + rocket);
   console.log("rocketimg " + rocketimg);
-  
+  console.log("rocketimgInfo " + rocketimgInfo);
 
   return (
           <div></div>

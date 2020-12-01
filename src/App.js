@@ -21,7 +21,7 @@ const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
         
         <Nav className="ca3NavbarBig m-auto">
           
-          <NavLink className="nav-link ca3NavbarBig" exact activeClassName="selected" href="/" to="/">
+          <NavLink className="nav-link ca3NavbarBig ca3Orange" exact activeClassName="selected" href="/" to="/">
             Home
         </NavLink>
 
@@ -30,33 +30,33 @@ const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
             Jokes
         </NavLink>*/}
       
-          <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/information">
+          <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to="/information">
             Information
         </NavLink>
-        <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/location">
+        <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to="/location">
             Location
         </NavLink>
-        <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/weather">
+        <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to="/weather">
             Weather
         </NavLink>
 
 
           {/** 
           {isLoggedIn && (
-            <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/scrape" href="/scrape">
+            <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to="/scrape" href="/scrape">
               Scrape
             </NavLink>
           )}
           {isAdmin && (
             <>
               <li>
-                <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/admin">
+                <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to="/admin">
                   Admin
             </NavLink>
               </li>
             </>
           )}
-          <NavLink className="nav-link ca3NavbarBig" activeClassName="selected" to="/login-out">
+          <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to="/login-out">
             {loginMsg}
           </NavLink>
           {isLoggedIn && (

@@ -13,14 +13,14 @@ const LaunchInformation =() => {
                 <Row className="ca3siteBody">
                     
                     <Col sm={4}>
-                        <div className="ca3h1">
+                        <div className="ca3h1 ca3Orange ">
                             Date: <br/>
                             Estimated Launch:<br/>
                             Location:<br/>
                         </div>
                     </Col>
                     <Col sm={8}>
-                        <div className="ca3P">
+                        <div className="ca3P ca3White">
                         {date} <br/>
                         {launchtime}<br/>
                         {location}<br/>
@@ -37,7 +37,7 @@ const LaunchInformation =() => {
                 <Row className="ca3siteBody">
 
                 <Col sm={4}>
-                    <div className="ca3h1">
+                    <div className="ca3h1 ca3Orange">
                         Launch Provider:<br/>
                         Provider Type:<br/><br/>
                         Mission Name:<br/>
@@ -47,7 +47,7 @@ const LaunchInformation =() => {
                 </Col>
 
                 <Col sm={8}>
-                    <div className="ca3P">
+                    <div className="ca3P ca3White">
                         {launchServiceProviderName}<br/>
                         {provtype}<br/><br/>
                         {missionname}<br/>
@@ -55,20 +55,20 @@ const LaunchInformation =() => {
                         
                         
                     </div>
-                    <div className="ca3MDetails">
+                    <div className="ca3P ca3White">
                     {missiondetails}<br/>
                     </div>
                     <br/>
                 </Col>
 
                 <Col sm={4}>
-                    <div className="ca3h1">
+                    <div className="ca3h1 ca3Orange">
                         Rocket:<br/>
                     </div>
                 </Col>
 
                 <Col sm={8}>
-                    <div className="ca3P">
+                    <div className="ca3P ca3White">
                         {rocket}<br/>
 
                     </div>
@@ -86,10 +86,8 @@ const LaunchInformation =() => {
             
             <hr className="ca3Hr"/>
             <br/>
-            <div className="ca3LaunchSmall">Comment Section</div>
+            <div className="ca3LaunchSmall ca3White">Comment Section</div>
             <Container>
-                <Comments />
-                <Comments />
                 <Comments />
                 <WriteComment/>
             </Container>

@@ -10,7 +10,7 @@ const LaunchWeather =() => {
                 <Row className="ca3siteBody">
                     <Col sm={4}></Col>
                     <Col sm={4}>
-                        <div className="ca3h1">
+                        <div className="ca3h1 ca3Orange">
                             Hagl og Patter<br/><br/>
                             </div>
                             <img src="https://i.ytimg.com/vi/X_VRlkPsSf4/maxresdefault.jpg"  className="img2"/> 
