@@ -64,21 +64,21 @@ const LaunchString = () => {
       launchString.results[launchNo].rocket.configuration.url.description;
   }
 
-  console.log("launch service provider:" + launchServiceProviderName);
-  console.log("location " + location);
-  console.log("countrycode" + countrycode);
-  console.log("wikilink " + wikilink);
-  console.log("lattitude " + latitude);
-  console.log("longitude " + longitude);
-  console.log("date " + date);
-  console.log("launchtime " + launchtime);
-  console.log("provlogo " + provlogo);
-  console.log("provtype " + provtype);
-  console.log("missionname " + missionname);
-  console.log("missiondetails " + missiondetails);
-  console.log("missiontype " + missiontype);
-  console.log("rocket " + rocket);
-  console.log("rocketimg " + rocketimg);
+  // console.log("launch service provider:" + launchServiceProviderName);
+  // console.log("location " + location);
+  // console.log("countrycode" + countrycode);
+  // console.log("wikilink " + wikilink);
+  // console.log("lattitude " + latitude);
+  // console.log("longitude " + longitude);
+  // console.log("date " + date);
+  // console.log("launchtime " + launchtime);
+  // console.log("provlogo " + provlogo);
+  // console.log("provtype " + provtype);
+  // console.log("missionname " + missionname);
+  // console.log("missiondetails " + missiondetails);
+  // console.log("missiontype " + missiontype);
+  // console.log("rocket " + rocket);
+  // console.log("rocketimg " + rocketimg);
 
   return <div></div>;
 };
