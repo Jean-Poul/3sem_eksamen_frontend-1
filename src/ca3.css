@@ -50,14 +50,14 @@ LAUNCH HEADER
 ---------------------------*/
 
  .ca3LaunchBig {
-    font-size: 60px;
+    font-size: 45px;
     color: #FFFFFF;
     text-align: center;
 }
  .ca3CDBig {
      display:inline;
     text-align: center;
-    font-size: 45px;
+    font-size: 30px;
     
 }
 
@@ -128,7 +128,7 @@ bread text
     color: #FFFFFF;
     font-size: 25px;
     text-align: left;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 .ca3MDetails {
@@ -221,7 +221,7 @@ comments section
 .submit {
     color: #FF5700 !important;
     font-size: 18px !important;
-  
+    background-color: transparent !important;
 }
 
 

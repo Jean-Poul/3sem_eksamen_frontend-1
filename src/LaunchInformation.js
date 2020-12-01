@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import "./ca3.css";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
 import Comments, {WriteComment} from './Comments';
-
+import LaunchString, {date,launchtime, location, provlogo,launchServiceProviderName, provtype, missionname, missiondetails,missiontype ,rocket,rocketimg}  from "./LaunchString";
 
 
 const LaunchInformation =() => {
     return (
         <div >
-            
+            <LaunchString/>
             <Container className="">
                 <Row className="ca3siteBody">
                     
@@ -21,9 +21,9 @@ const LaunchInformation =() => {
                     </Col>
                     <Col sm={8}>
                         <div className="ca3P">
-                            November 27, 2020 <br/>
-                            09:02 EST<br/>
-                            Cape Canaveral Air Force Station - SLC 40<br/>
+                        {date} <br/>
+                        {launchtime}<br/>
+                        {location}<br/>
                         </div>
                     </Col>
                 </Row>
@@ -39,33 +39,37 @@ const LaunchInformation =() => {
                 <Col sm={4}>
                     <div className="ca3h1">
                         Launch Provider:<br/>
-                        Type:<br/>
+                        Provider Type:<br/><br/>
                         Mission Name:<br/>
+                        Mission Type:<br/>
                         Mission Details:<br/>
                     </div>
                 </Col>
 
                 <Col sm={8}>
                     <div className="ca3P">
-                        SpaceX<br/>
-                        Commercial<br/>
-                        Red Rocket <br/>
+                        {launchServiceProviderName}<br/>
+                        {provtype}<br/><br/>
+                        {missionname}<br/>
+                        {missiontype}<br/>
+                        
+                        
                     </div>
                     <div className="ca3MDetails">
-                        A SpaceX Falcon 9 rocket will launch the 16th batch, of approximately 60 satellites for SpaceX’s Starlink broadband network, a mission designated Starlink V1.0-L15.
+                    {missiondetails}<br/>
                     </div>
                     <br/>
                 </Col>
 
                 <Col sm={4}>
                     <div className="ca3h1">
-                        Vehicle:<br/>
+                        Rocket:<br/>
                     </div>
                 </Col>
 
                 <Col sm={8}>
                     <div className="ca3P">
-                        SpaceX Falcon 9<br/>
+                        {rocket}<br/>
 
                     </div>
                 </Col>

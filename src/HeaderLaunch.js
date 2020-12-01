@@ -3,7 +3,7 @@ import "./ca3.css";
 
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
 import rocketlaunchlogo from "./rocketlaunch_logo_orange_dark_1500.png"
-
+import LaunchString, {launchNo,launchServiceProviderName,location, countrycode}  from "./LaunchString";
 
 const HeaderLaunch =() => {
     return (

@@ -56,7 +56,7 @@ export const WriteComment =() => {
         </div>     
                 <div className="ca3Submit">
                     
-                <Button onClick={submitComment} class="btn submit" variant="primary"  type="submit">
+                <Button onClick={submitComment} class="btn btn-link submit" variant="primary"  type="submit">
                 Submit
                 </Button>
                 </div>
