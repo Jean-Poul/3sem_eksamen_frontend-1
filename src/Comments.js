@@ -13,7 +13,7 @@ const Comments = () => {
             .then(res => res.json())
             .then(data => {
                 setComments(data);
-                console.log(data);
+                // console.log(data);
             });
     }
 
