@@ -3,7 +3,7 @@ ul.header {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #1d1d1d;
 }
 
 ul.header li {
@@ -22,7 +22,7 @@ ul.header li a:hover:not(.active) {
 }
 
 .selected {
-  color: white !important;
+  color: lightblue !important;
 }
 
 table,
@@ -42,14 +42,6 @@ td {
   right: 0px;
   margin-right: 15px;
   margin-top: 6px;
-  color: white;
-}
-
-.fr {
-  position: absolute;
-  right: 0px;
-  float: right;
-  margin-right: 15px;
   color: white;
 }
 

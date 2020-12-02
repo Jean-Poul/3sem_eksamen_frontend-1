@@ -5,6 +5,9 @@ import { Navbar, Nav } from "react-bootstrap";
 //import AllJokes from "./AllJokes";
 //import AllScrape from "./AllScrape";
 import Frontpage from "./Frontpage";
+import Information from "./Information";
+import Location from "./Location";
+import Weather from "./Weather";
 import UserAdmin from "./UserAdmin";
 import CommentAdmin from "./CommentAdmin";
 import Login from "./Login";
@@ -94,6 +97,15 @@ export default function App() {
           <Route path="/scrape">
             <Scrape />
           </Route> */}
+          <Route path="/information">
+            <Information />
+          </Route>
+          <Route path="/location">
+            <Location />
+          </Route>
+          <Route path="/weather">
+            <Weather />
+          </Route>
           <Route path="/users">
             <Users />
           </Route>
@@ -140,6 +152,14 @@ function Comments() {
     </div>
   );
 }
+
+/* function Information() {
+  return (
+    <div className="pageContent">
+      <Information />
+    </div>
+  );
+} */
 /* function Jokes() {
   return (
     <div className="pageContent">

@@ -6,11 +6,13 @@ import {useLocation} from 'react-router-dom'
 import {URL} from "./settings";
 
 
-function Information() {
+function Location() {
   const [nextlaunch, setNextlaunch] = useState({});
   let location = useLocation();
   let index = location.launchProp.index;
-  console.log("index: ", index);
+  let lat = location.launchProp.lat;
+  let lon = location.launchProp.lon;
+  console.log("index: "+ index+ " lat: "+ lat+" lon: "+lon);
 
   const fetchNextlaunch = () => {
     fetch(`${URL}/api/nextlaunch/upcoming`)
@@ -29,7 +31,7 @@ function Information() {
     <div className="App">
       {(typeof nextlaunch.results != "undefined") ? (
         <div>
-          <h1>Launch information</h1>
+          <h1>Launch location</h1>
           <div>{nextlaunch.results[index].net}</div>
           <div>{nextlaunch.results[index].launch_service_provider.name}</div>
           <div>{nextlaunch.results[index].pad.location.name}</div>
@@ -73,4 +75,4 @@ function Information() {
   );
 }
 
-export default Information;
+export default Location;
