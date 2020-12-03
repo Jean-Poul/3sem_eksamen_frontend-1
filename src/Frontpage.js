@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
-import { Nav } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
+import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
 import { URL } from "./settings";
+import Countdown from "./Countdown";
 
 function Frontpage() {
   const [nextlaunch, setNextlaunch] = useState({});
@@ -20,86 +22,91 @@ function Frontpage() {
   }, []);
 
   return (
-    <div className="App">
+    <div>
       {(typeof nextlaunch.results != "undefined") ? (
         <div>
-          <h1>Next Launch</h1>
-          <div>{nextlaunch.results[0].net}</div>
-          <div>{nextlaunch.results[0].launch_service_provider.name}</div>
-          <div>{nextlaunch.results[0].pad.location.name}</div>
-          <div>{nextlaunch.results[0].pad.location.country_code}</div>
+          <img src={rocketlaunchlogo} className="imgLogo" alt=""/><br />
+          <div className="ca3LaunchBig ca3White">Launch In</div>
+          <div className="ca3CDBig"><Countdown date={(nextlaunch.results[0].net)}/></div>
+          <div className="ca3LaunchinfoBig ca3White">
+            {nextlaunch.results[0].launch_service_provider.name}&nbsp;-&nbsp;
+            {nextlaunch.results[0].pad.location.name}&nbsp;-&nbsp;
+            {nextlaunch.results[0].pad.location.country_code}</div>
           <div>
-            <Nav className="mr-auto">
-              <NavLink className="nav-link" exact activeClassName="selected" href="/" to="/">
-                Home
+            <Navbar variant="dark">
+              <Nav className="ca3NavbarBig m-auto">
+                <NavLink className="nav-link ca3NavbarBig ca3Orange" exact activeClassName="selected" href="/" to="/">
+                  Home
             </NavLink>
-              <NavLink className="nav-link" activeClassName="selected" to={{
-                pathname: "/information",
-                launchProp: { index: 0 }
-              }}>
-                Information
+                <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to={{
+                  pathname: "/information",
+                  launchProp: { index: 0 }
+                }}>
+                  Information
             </NavLink>
-              <NavLink className="nav-link" activeClassName="selected" to={{
-                pathname: "/location",
-                launchProp: {
-                  index: 0,
-                  lat: nextlaunch.results[0].pad.latitude,
-                  lon: nextlaunch.results[0].pad.longitude
-                }
-              }}>
-                Location
+                <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to={{
+                  pathname: "/location",
+                  launchProp: {
+                    index: 0,
+                    lat: nextlaunch.results[0].pad.latitude,
+                    lon: nextlaunch.results[0].pad.longitude
+                  }
+                }}>
+                  Location
             </NavLink>
-              <NavLink className="nav-link" activeClassName="selected" to={{
-                pathname: "/weather",
-                launchProp: {
-                  index: 0,
-                  lat: nextlaunch.results[0].pad.latitude,
-                  lon: nextlaunch.results[0].pad.longitude
-                }
-              }}>
-                Weather
+                <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to={{
+                  pathname: "/weather",
+                  launchProp: {
+                    index: 0,
+                    lat: nextlaunch.results[0].pad.latitude,
+                    lon: nextlaunch.results[0].pad.longitude
+                  }
+                }}>
+                  Weather
             </NavLink>
-            </Nav>
+              </Nav>
+            </Navbar>
           </div>
-          <div>
-            <h1>Upcoming Launches</h1>
+          <div className="mt-4">
+            <div className="ca3CDBig ca3White">Upcoming Launches</div>
             {nextlaunch.results.slice(1).map((data, index) =>
-              <div key={data.id}>
-                <div>{index + 1}</div>
-                <div>{data.net}</div>
-                <div>{data.launch_service_provider.name}</div>
-                <div>{data.pad.location.name}</div>
-                <div>{data.pad.location.country_code}</div>
+              <div key={data.id} className="mt-4">
+                <div className="ca3CDSmall ca3White">Launch In</div>
+                <div className="ca3CDSmall"><Countdown date={data.net}/></div>
+                <div className="ca3LaunchinfoSmall ca3White">{data.launch_service_provider.name}</div>
+                <div className="ca3LaunchinfoSmall ca3White">{data.pad.location.name}</div>
+                {/* <div className="ca3LaunchinfoSmall ca3White">{data.pad.location.country_code}</div> */}
                 <div>
-                  <Nav className="mr-auto">
-
-                    <NavLink className="nav-link" activeClassName="selected" to={{
-                      pathname: "/information",
-                      launchProp: { index: index + 1 }
-                    }}>
-                      Information
+                  <Navbar variant="dark">
+                    <Nav className="m-auto">
+                      <NavLink className="nav-link ca3NavbarSmall ca3Orange" activeClassName="selected" to={{
+                        pathname: "/information",
+                        launchProp: { index: index + 1 }
+                      }}>
+                        Information
                     </NavLink>
-                    <NavLink className="nav-link" activeClassName="selected" to={{
-                      pathname: "/location",
-                      launchProp: {
-                        index: index + 1,
-                        lat: nextlaunch.results[index + 1].pad.latitude,
-                        lon: nextlaunch.results[index + 1].pad.longitude
-                      }
-                    }}>
-                      Location
+                      <NavLink className="nav-link ca3NavbarSmall ca3Orange" activeClassName="selected" to={{
+                        pathname: "/location",
+                        launchProp: {
+                          index: index + 1,
+                          lat: nextlaunch.results[index + 1].pad.latitude,
+                          lon: nextlaunch.results[index + 1].pad.longitude
+                        }
+                      }}>
+                        Location
                     </NavLink>
-                    <NavLink className="nav-link" activeClassName="selected" to={{
-                      pathname: "/weather",
-                      launchProp: {
-                        index: index + 1,
-                        lat: nextlaunch.results[index + 1].pad.latitude,
-                        lon: nextlaunch.results[index + 1].pad.longitude
-                      }
-                    }}>
-                      Weather
+                      <NavLink className="nav-link ca3NavbarSmall ca3Orange" activeClassName="selected" to={{
+                        pathname: "/weather",
+                        launchProp: {
+                          index: index + 1,
+                          lat: nextlaunch.results[index + 1].pad.latitude,
+                          lon: nextlaunch.results[index + 1].pad.longitude
+                        }
+                      }}>
+                        Weather
                     </NavLink>
-                  </Nav>
+                    </Nav>
+                  </Navbar>
                 </div>
               </div>
             )}

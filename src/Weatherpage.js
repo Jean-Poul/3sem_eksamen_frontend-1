@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
+//import "./ca3.css";
 import { NavLink } from "react-router-dom";
-import { Nav } from "react-bootstrap";
-//import "./weather.css";
+import { Nav, Navbar } from "react-bootstrap";
+import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
 import Compass from './assets/compass.svg';
 import Barometer from './assets/barometer.svg';
 import Humidity from './assets/humidity.svg';
 import Sunrise from './assets/sunrise.svg';
 import Sunset from './assets/sunset.svg';
 import { useLocation } from 'react-router-dom'
-
+import Countdown from "./Countdown";
 import { URL } from "./settings";
 
 const api = {
@@ -23,7 +24,7 @@ function App() {
     let index = location.launchProp.index;
     let lat = location.launchProp.lat;
     let lon = location.launchProp.lon;
-    console.log("index: "+index+" lat: " + lat + " lon: " + lon);
+    console.log("index: " + index + " lat: " + lat + " lon: " + lon);
 
     const fetchWeather = () => {
         fetch(`${URL}/api/weather/${lat}/${lon}/${api.key}`)
@@ -96,50 +97,56 @@ function App() {
 
     return (
         <div>
-            <div className="App">
+            <div>
                 {(typeof nextlaunch.results != "undefined") ? (
                     <div>
-                        <h1>Weather information</h1>
-                        <div>{nextlaunch.results[index].net}</div>
-                        <div>{nextlaunch.results[index].launch_service_provider.name}</div>
-                        <div>{nextlaunch.results[index].pad.location.name}</div>
-                        <div>{nextlaunch.results[index].pad.location.country_code}</div>
+                        <img src={rocketlaunchlogo} className="imgLogo" alt=""/><br />
+                        <div className="ca3LaunchBig ca3White">Weather information</div>
+                        <div className="ca3CDBig"><Countdown date={(nextlaunch.results[index].net)}/></div>
+                        <div className="ca3LaunchinfoBig ca3White">
+                            {nextlaunch.results[index].launch_service_provider.name}&nbsp;-&nbsp;
+                            {nextlaunch.results[index].pad.location.name}&nbsp;-&nbsp;
+                            {nextlaunch.results[index].pad.location.country_code}
+                        </div>
                         <div>
-                            <Nav className="mr-auto">
-                                <NavLink className="nav-link" exact activeClassName="selected" href="/" to="/">
-                                    Home
+                            <Navbar variant="dark">
+                                <Nav className="ca3NavbarBig m-auto">
+                                    <NavLink className="nav-link ca3NavbarBig ca3Orange" exact activeClassName="selected" href="/" to="/">
+                                        Home
                                 </NavLink>
-                                <NavLink className="nav-link" activeClassName="selected" to={{
-                                    pathname: "/information",
-                                    launchProp: { index: index }
-                                }}>
-                                    Information
+                                    <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to={{
+                                        pathname: "/information",
+                                        launchProp: { index: index }
+                                    }}>
+                                        Information
                                 </NavLink>
-                                <NavLink className="nav-link" activeClassName="selected" to={{
-                                    pathname: "/location",
-                                    launchProp: {
-                                        index: index,
-                                        lat: nextlaunch.results[index].pad.latitude,
-                                        lon: nextlaunch.results[index].pad.longitude
-                                    }
-                                }}>
-                                    Location
+                                    <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to={{
+                                        pathname: "/location",
+                                        launchProp: {
+                                            index: index,
+                                            lat: nextlaunch.results[index].pad.latitude,
+                                            lon: nextlaunch.results[index].pad.longitude
+                                        }
+                                    }}>
+                                        Location
                                 </NavLink>
-                                <NavLink className="nav-link" activeClassName="selected" to={{
-                                    pathname: "/weather",
-                                    launchProp: {
-                                        lat: nextlaunch.results[index].pad.latitude,
-                                        lon: nextlaunch.results[index].pad.longitude
-                                    }
-                                }}>
-                                    Weather
+                                    <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to={{
+                                        pathname: "/weather",
+                                        launchProp: {
+                                            index: index,
+                                            lat: nextlaunch.results[index].pad.latitude,
+                                            lon: nextlaunch.results[index].pad.longitude
+                                        }
+                                    }}>
+                                        Weather
                                 </NavLink>
-                            </Nav>
+                                </Nav>
+                            </Navbar>
                         </div>
                     </div>
                 ) : ('')}
             </div>
-            <div className="app">
+            <div className="mt-5">
                 {(typeof weather.current != "undefined") ? (
                     <main>
                         <div>

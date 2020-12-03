@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import "./style2.css";
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav } from "react-bootstrap";
 //import AllJokes from "./AllJokes";
 //import AllScrape from "./AllScrape";
 import Frontpage from "./Frontpage";
-import Information from "./Information";
-import Location from "./Location";
-import Weather from "./Weather";
+import InformationPage from "./Informationpage";
+import LocationPage from "./Locationpage";
+import WeatherPage from "./Weatherpage";
 import UserAdmin from "./UserAdmin";
 import CommentAdmin from "./CommentAdmin";
 import Login from "./Login";
@@ -16,7 +16,7 @@ import { Switch, Route, NavLink, useHistory } from "react-router-dom";
 const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" id="header">
+      <Navbar variant="dark" id="header">
         {/* <Navbar.Brand href="#home">Hold E, Gruppe 8</Navbar.Brand> */}
         <Nav className="mr-auto">
           <NavLink className="nav-link" exact activeClassName="selected" href="/" to="/">
@@ -153,13 +153,29 @@ function Comments() {
   );
 }
 
-/* function Information() {
+function Information() {
   return (
     <div className="pageContent">
-      <Information />
+      <InformationPage />
     </div>
   );
-} */
+}
+
+function Location() {
+  return (
+    <div className="pageContent">
+      <LocationPage />
+    </div>
+  );
+}
+
+function Weather() {
+  return (
+    <div className="pageContent">
+      <WeatherPage />
+    </div>
+  );
+}
 /* function Jokes() {
   return (
     <div className="pageContent">

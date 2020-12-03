@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
-import { Nav } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
+import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
 import {useLocation} from 'react-router-dom'
-
+import Countdown from "./Countdown";
 import {URL} from "./settings";
 
 
-function Information() {
+function Location() {
   const [nextlaunch, setNextlaunch] = useState({});
   let location = useLocation();
   let index = location.launchProp.index;
-  console.log("index: ", index);
+  let lat = location.launchProp.lat;
+  let lon = location.launchProp.lon;
+  console.log("index: "+ index+ " lat: "+ lat+" lon: "+lon);
 
   const fetchNextlaunch = () => {
     fetch(`${URL}/api/nextlaunch/upcoming`)
@@ -26,26 +29,29 @@ function Information() {
   }, []);
 
   return (
-    <div className="App">
+    <div>
       {(typeof nextlaunch.results != "undefined") ? (
         <div>
-          <h1>Launch information</h1>
-          <div>{nextlaunch.results[index].net}</div>
-          <div>{nextlaunch.results[index].launch_service_provider.name}</div>
-          <div>{nextlaunch.results[index].pad.location.name}</div>
-          <div>{nextlaunch.results[index].pad.location.country_code}</div>
+          <img src={rocketlaunchlogo} className="imgLogo" alt=""/><br />
+          <div className="ca3LaunchBig ca3White">Launch location</div>
+          <div className="ca3CDBig"><Countdown date={(nextlaunch.results[index].net)}/></div>
+          <div className="ca3LaunchinfoBig ca3White">
+            {nextlaunch.results[index].launch_service_provider.name}&nbsp;-&nbsp;
+            {nextlaunch.results[index].pad.location.name}&nbsp;-&nbsp;
+            {nextlaunch.results[index].pad.location.country_code}</div>
           <div>
-          <Nav className="mr-auto">
-              <NavLink className="nav-link" exact activeClassName="selected" href="/" to="/">
+          <Navbar variant="dark">
+          <Nav className="ca3NavbarBig m-auto">
+              <NavLink className="nav-link ca3NavbarBig ca3Orange" exact activeClassName="selected" href="/" to="/">
                 Home
             </NavLink>
-              <NavLink className="nav-link" activeClassName="selected" to={{
+              <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to={{
                 pathname: "/information",
                 launchProp: { index: index }
               }}>
                 Information
             </NavLink>
-              <NavLink className="nav-link" activeClassName="selected" to={{
+              <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to={{
                 pathname: "/location",
                 launchProp: {
                   index: index,
@@ -55,7 +61,7 @@ function Information() {
               }}>
                 Location
             </NavLink>
-              <NavLink className="nav-link" activeClassName="selected" to={{
+              <NavLink className="nav-link ca3NavbarBig ca3Orange" activeClassName="selected" to={{
                 pathname: "/weather",
                 launchProp: {
                   index: index,
@@ -66,6 +72,7 @@ function Information() {
                 Weather
             </NavLink>
             </Nav>
+            </Navbar>
           </div>
         </div>
       ) : ('')}
@@ -73,4 +80,4 @@ function Information() {
   );
 }
 
-export default Information;
+export default Location;
