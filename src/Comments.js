@@ -6,20 +6,47 @@ import { URLComments } from "./settings";
 
 const Comments = () => {
 
-    const [comments, setComments] = useState({});
+    const [comments, setComments] = useState([]);
 
-    const fetchComments = () => {
-        fetch(URLComments)
+    useEffect(() => {
+        fetchAllComments();
+    }, []);
+
+    const fetchAllComments = () => {
+        fetch(URLComments + "all")
             .then(res => res.json())
             .then(data => {
                 setComments(data);
-                // console.log(data);
+                console.log(data);
             });
     }
 
-    useEffect(() => {
-        fetchComments();
-    }, []);
+    const fetchNewComments = () => {
+        fetch(URLComments + "all")
+            .then(res => res.json())
+            .then(data => {
+                setComments(data);
+            });
+    }
+
+    const submitComment = (evt) => {
+        evt.preventDefault();
+        //WriteComment(newComment.username, newComment.comment);
+
+        let options = {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userComment: document.getElementById("Comment").value
+            })
+        }
+        fetch(URLComments, options);
+        fetchNewComments();
+    }
+
 
     return (
         <div>
@@ -51,48 +78,57 @@ const Comments = () => {
                     <Col sm={2}></Col>
                 </Row>
             </div>
+            <div>
+
+                <Row>
+                    <Col sm={2}></Col>
+                    <Col sm={8}>
+                        <div class="col-xs-4">
+                            <Form onChange={onChange} className="mt-4" label="">
+                                <textarea
+                                    class="form-control"
+                                    rows="5"
+                                    type="text"
+                                    id="Comment"
+                                    placeholder="Write a comment"
+                                />
+                                <div className="ca3Submit">
+                                    <Button onClick={submitComment} variant="primary" type="submit">
+                                        Submit your comment
+                                    </Button>
+                                </div>
+                            </Form>
+                        </div>
+                    </Col>
+                    <Col sm={2}></Col>
+                </Row>
+
+            </div>
         </div>
     );
 };
 
-
-
-export const WriteComment = () => {
-
-    const init = { username: "", comment: "" };
-    const [newComment, setNewComment] = useState(init);
-
-    const submitComment = (evt) => {
-        evt.preventDefault();
-        WriteComment(newComment.username, newComment.comment);
+/* function makeOptions(method, body) {
+    const opts = {
+        method: method,
+        headers: {
+            "Content-type": "application/json",
+            "Accept": "application/json"
+        }
     }
-    const onChange = (evt) => {
-        setNewComment({ ...newComment, [evt.target.id]: evt.target.value })
+    if (body) {
+        opts.body = JSON.stringify(body);
     }
+    return opts;
+} */
 
-    return (
-        <div>
 
-            <Row>
-                <Col sm={2}></Col>
-                <Col sm={8}>
-                    <div class="col-xs-4">
+//const init = { username: "", comment: "" };
+//const [newComment, setNewComment] = useState(init);
 
-                        <textarea class="form-control" id="Comment" rows="5" placeholder="Enter username"></textarea>
-                    </div>
-                    <div className="ca3Submit">
-
-                        <Button onClick={submitComment} class="btn btn-link submit" variant="primary" type="submit">
-                            Submit
-                </Button>
-                    </div>
-                </Col>
-                <Col sm={2}></Col>
-            </Row>
-
-        </div>
-    );
-};
+const onChange = (evt) => {
+    //setNewComment({ ...newComment, [evt.target.id]: evt.target.value })
+}
 
 
 export default Comments;

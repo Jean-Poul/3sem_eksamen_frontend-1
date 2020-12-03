@@ -117,7 +117,6 @@ const LaunchInformation = () => {
       <div className="ca3LaunchSmall">Comment Section</div>
       <Container>
         <Comments />
-        <WriteComment />
       </Container>
     </div>
   );

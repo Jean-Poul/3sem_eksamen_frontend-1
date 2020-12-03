@@ -5,4 +5,4 @@ export const URLScrapeParallel = "http://localhost:8080/CA3_Boilerplate/api/scra
 
 export const URLLaunchString = "https://micklarsen.com/3_sem_eksamensprojekt/api/nextlaunch/upcoming";
 
-export const URLComments = "http://localhost:8080/CA3_Boilerplate/api/comments/all";
+export const URLComments = "http://localhost:8080/CA3_Boilerplate/api/comments/";
