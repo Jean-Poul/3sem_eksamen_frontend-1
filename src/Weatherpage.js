@@ -8,7 +8,7 @@ import Barometer from './assets/barometer.svg';
 import Humidity from './assets/humidity.svg';
 import Sunrise from './assets/sunrise.svg';
 import Sunset from './assets/sunset.svg';
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import Countdown from "./Countdown";
 import { URL } from "./settings";
 
@@ -21,9 +21,10 @@ function App() {
     const [cityName, setCityName] = useState({});
     const [nextlaunch, setNextlaunch] = useState({});
     let location = useLocation();
-    let index = location.launchProp.index;
-    let lat = location.launchProp.lat;
-    let lon = location.launchProp.lon;
+    let history = useHistory();
+    let index = (location.launchProp !== undefined) ? location.launchProp.index : history.push("/");
+    let lat = (location.launchProp !== undefined) ? location.launchProp.lat : history.push("/");
+    let lon = (location.launchProp !== undefined) ? location.launchProp.lon : history.push("/");
     console.log("index: " + index + " lat: " + lat + " lon: " + lon);
 
     const fetchWeather = () => {

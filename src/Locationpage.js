@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
-import {useLocation} from 'react-router-dom'
+import {useLocation, useHistory} from 'react-router-dom'
 import Countdown from "./Countdown";
 import {URL} from "./settings";
 
@@ -10,9 +10,10 @@ import {URL} from "./settings";
 function Location() {
   const [nextlaunch, setNextlaunch] = useState({});
   let location = useLocation();
-  let index = location.launchProp.index;
-  let lat = location.launchProp.lat;
-  let lon = location.launchProp.lon;
+  let history = useHistory();
+  let index = (location.launchProp !== undefined) ? location.launchProp.index : history.push("/");
+  let lat = (location.launchProp !== undefined) ? location.launchProp.lat : history.push("/");
+  let lon = (location.launchProp !== undefined) ? location.launchProp.lon : history.push("/");
   console.log("index: "+ index+ " lat: "+ lat+" lon: "+lon);
 
   const fetchNextlaunch = () => {

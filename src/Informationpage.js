@@ -2,14 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png"
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import { URL } from "./settings";
 import Countdown from "./Countdown";
 
 function InformationPage() {
   const [nextlaunch, setNextlaunch] = useState({});
   let location = useLocation();
-  let index = location.launchProp.index;
+  let history = useHistory();
+  let index = (location.launchProp !== undefined) ? location.launchProp.index : history.push("/");
+  console.log(index);
+
+  //let index = 0;
+  //let index = location.launchProp.index;
   console.log("index: ", index);
 
   const fetchNextlaunch = () => {
