@@ -22,6 +22,8 @@ export let missiontype;
 export let rocket;
 export let rocketimg;
 
+export let rocketID;
+
 const LaunchString = () => {
   const [launchString, setLaunchString] = useState([]);
 
@@ -62,6 +64,7 @@ const LaunchString = () => {
     rocket = launchString.results[launchNo].rocket.configuration.full_name;
     rocketimg =
       launchString.results[launchNo].rocket.configuration.url.description;
+    rocketID = launchString.results[launchNo].id;
   }
 
   // console.log("launch service provider:" + launchServiceProviderName);
