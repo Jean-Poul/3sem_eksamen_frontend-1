@@ -8,6 +8,7 @@ import Countdown from "./Countdown";
 
 function InformationPage() {
   const [nextlaunch, setNextlaunch] = useState({});
+  const [launchprovider, setLaunchprovider] = useState({});
   let location = useLocation();
   let history = useHistory();
   let index = (location.launchProp !== undefined) ? location.launchProp.index : history.push("/");
@@ -23,6 +24,13 @@ function InformationPage() {
       .then(data => {
         setNextlaunch(data);
         console.log(data);
+
+        fetch(data.results[index].launch_service_provider.url)
+          .then(result => result.json())
+          .then(data2 => {
+            setLaunchprovider(data2);
+            console.log(data2);
+          });
       });
   }
 
@@ -109,7 +117,7 @@ function InformationPage() {
               <Row>
                 <Col>
                   <br />
-                  <img src="https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/spacex_logo_20191121063502.png" className="img"></img>
+                  <img src={launchprovider.logo_url} className="img"></img>
                   <br />
                   <br />
                 </Col>
