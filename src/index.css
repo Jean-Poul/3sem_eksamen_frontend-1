@@ -366,6 +366,8 @@ comments section
   border-color: transparent !important;
 }
 
+
+/* used in header login */
 .floatRight {
   position: absolute;
   right: 0px;

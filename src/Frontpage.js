@@ -28,10 +28,10 @@ function Frontpage() {
           <img src={rocketlaunchlogo} className="imgLogo" alt=""/><br />
           <div className="ca3LaunchBig ca3White">Launch In</div>
           <div className="ca3CDBig"><Countdown date={(nextlaunch.results[0].net)}/></div>
-          <div className="ca3LaunchinfoBig ca3White">
-            {nextlaunch.results[0].launch_service_provider.name}&nbsp;-&nbsp;
-            {nextlaunch.results[0].pad.location.name}&nbsp;-&nbsp;
-            {nextlaunch.results[0].pad.location.country_code}</div>
+          <div className="ca3LaunchinfoBig ca3White">{nextlaunch.results[0].launch_service_provider.name}</div>
+          <div className="ca3LaunchinfoBig ca3White">{nextlaunch.results[0].pad.location.name}</div>
+          <div className="ca3LaunchinfoBig ca3White">{nextlaunch.results[0].pad.location.country_code}</div>
+            
           <div>
             <Navbar variant="dark">
               <Nav className="ca3NavbarBig m-auto">
