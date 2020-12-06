@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
-import { Nav, Navbar, Form, Container, Row, Col, Button } from "react-bootstrap";
+import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
 import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png"
 import { useLocation, useHistory } from 'react-router-dom'
 import { URL } from "./settings";
@@ -137,11 +137,19 @@ function InformationPage() {
                   <div className="ca3P ca3White">{nextlaunch.results[index].pad.location.name}</div>
                 </Col>
               </Row>
+              <Row>
+                <Col sm={4}>
+                  <div className="ca3h1 ca3Orange">Status:</div>
+                </Col>
+                <Col sm={8}>
+                  <div className="ca3P ca3White">{nextlaunch.results[index].status.name}</div>
+                </Col>
+              </Row>
 
               <Row>
                 <Col>
                   <br />
-                  {/* <img src={launchprovider.logo_url} className="img"></img> */}
+                  <img src={launchprovider.logo_url} className="img"></img>
                   <br />
                   <br />
                 </Col>

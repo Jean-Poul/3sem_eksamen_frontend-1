@@ -140,9 +140,16 @@ function Location() {
                   </div>
                 </Col>
               </Row>
+              <Row>
+                <Col>
+                  <br />
+                  <img src={nextlaunch.results[index].pad.map_image} className="imgRocket"></img>
+                  <br />
+                  <br />
+                </Col>
+              </Row>
             </Container >
           </div >
-          
         </div >
       ) : ('')
       }
