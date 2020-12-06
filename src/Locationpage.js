@@ -4,6 +4,8 @@ import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
 import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
 import { useLocation, useHistory } from 'react-router-dom'
 import Countdown from "./Countdown";
+import MapContainer from "./GoogleMaps";
+import GoogleApiWrapper from "./GoogleMaps"
 import { URL } from "./settings";
 
 
@@ -21,7 +23,13 @@ function Location() {
       .then(res => res.json())
       .then(data => {
         setNextlaunch(data);
+        <MapContainer
+          latitude={data.results[index].pad.latitude}
+          longitude={data.results[index].pad.longitude}
+        />
         console.log(data);
+        console.log("lat: "+ data.results[index].pad.latitude);
+        console.log("lon: "+ data.results[index].pad.longitude);
       });
   }
 
@@ -140,15 +148,21 @@ function Location() {
                   </div>
                 </Col>
               </Row>
-              <Row>
+              {/*  <Row>
                 <Col>
                   <br />
                   <img src={nextlaunch.results[index].pad.map_image} className="imgRocket"></img>
                   <br />
                   <br />
                 </Col>
-              </Row>
+              </Row> */}
             </Container >
+            <div className="main-wrapper ">
+              <GoogleApiWrapper
+                latitude={nextlaunch.results[index].pad.latitude}
+                longitude={nextlaunch.results[index].pad.longitude}
+              />
+            </div>
           </div >
         </div >
       ) : ('')

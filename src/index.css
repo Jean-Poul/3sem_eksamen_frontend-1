@@ -326,7 +326,7 @@ IMG
 }
 
 .main-wrapper {
-  margin-left: 20%;
+  margin-top: 40px;
 }
 
 .imgRocket {
@@ -367,8 +367,8 @@ comments section
   border-color: transparent !important;
 }
 
-
 /* used in header login */
+
 .floatRight {
   position: absolute;
   right: 0px;
