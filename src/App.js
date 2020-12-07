@@ -1,22 +1,28 @@
 import React, { useState } from "react";
-import "./style2.css";
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
-import AllJokes from "./AllJokes";
-import AllScrape from "./AllScrape";
+import { Navbar, Nav } from "react-bootstrap";
+//import AllJokes from "./AllJokes";
+//import AllScrape from "./AllScrape";
+import Frontpage from "./Frontpage";
+import InformationPage from "./Informationpage";
+import LocationPage from "./Locationpage";
+import WeatherPage from "./Weatherpage";
+import UserAdmin from "./UserAdmin";
+import CommentAdmin from "./CommentAdmin";
 import Login from "./Login";
 import { Switch, Route, NavLink, useHistory } from "react-router-dom";
 
 const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" id="header">
-        <Navbar.Brand href="#home">Hold E, Gruppe 8</Navbar.Brand>
+      <Navbar variant="dark" id="header">
+        {/* <Navbar.Brand href="#home">Hold E, Gruppe 8</Navbar.Brand> */}
         <Nav className="mr-auto">
           <NavLink className="nav-link" exact activeClassName="selected" href="/" to="/">
-            Home
+            Hold E, Gruppe 8
         </NavLink>
-          <NavLink className="nav-link" activeClassName="selected" to="/jokes">
+          {/* <NavLink className="nav-link" activeClassName="selected" to="/jokes">
             Jokes
         </NavLink>
 
@@ -24,14 +30,16 @@ const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
             <NavLink className="nav-link" activeClassName="selected" to="/scrape" href="/scrape">
               Scrape
             </NavLink>
-          )}
+          )} */}
           {isAdmin && (
             <>
-              <li>
-                <NavLink className="nav-link" activeClassName="selected" to="/admin">
-                  Admin
+              <NavLink className="nav-link" activeClassName="selected" to="/comments">
+                Comments
             </NavLink>
-              </li>
+
+              <NavLink className="nav-link" activeClassName="selected" to="/users">
+                Users
+            </NavLink>
             </>
           )}
           <NavLink className="nav-link" activeClassName="selected" to="/login-out">
@@ -83,14 +91,26 @@ export default function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/jokes">
+          {/* <Route path="/jokes">
             <Jokes />
           </Route>
           <Route path="/scrape">
             <Scrape />
+          </Route> */}
+          <Route path="/information">
+            <Information />
           </Route>
-          <Route path="/admin">
-            <Admin />
+          <Route path="/location">
+            <Location />
+          </Route>
+          <Route path="/weather">
+            <Weather />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/comments">
+            <Comments />
           </Route>
           <Route path="/login-out">
             <Login
@@ -112,12 +132,51 @@ export default function App() {
 function Home() {
   return (
     <div className="pageContent">
-      <h2>Home</h2>
+      <Frontpage />
     </div>
   );
 }
 
-function Jokes() {
+function Users() {
+  return (
+    <div className="pageContent">
+      <UserAdmin />
+    </div>
+  );
+}
+
+function Comments() {
+  return (
+    <div className="pageContent">
+      <CommentAdmin />
+    </div>
+  );
+}
+
+function Information() {
+  return (
+    <div className="pageContent">
+      <InformationPage />
+    </div>
+  );
+}
+
+function Location() {
+  return (
+    <div className="pageContent">
+      <LocationPage />
+    </div>
+  );
+}
+
+function Weather() {
+  return (
+    <div className="pageContent">
+      <WeatherPage />
+    </div>
+  );
+}
+/* function Jokes() {
   return (
     <div className="pageContent">
       <AllJokes />
@@ -139,4 +198,4 @@ function Admin() {
       <h2>Admin</h2>
     </div>
   );
-}
+} */
