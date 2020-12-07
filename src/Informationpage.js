@@ -20,8 +20,10 @@ function InformationPage() {
       .then(data => {
         setNextlaunch(data);
         console.log(data);
-
-        fetch(data.results[index].launch_service_provider.url)
+        
+        let i = (index !== undefined) ? index : 0;
+        
+        fetch(data.results[i].launch_service_provider.url)
           .then(result => result.json())
           .then(data2 => {
             setLaunchprovider(data2);
@@ -108,7 +110,7 @@ function InformationPage() {
           </div>
           <div>
             <Container>
-            <Row>
+              <Row>
                 <Col sm={4}><div className="ca3P">&nbsp;</div></Col>
                 <Col sm={8}><div className="ca3P ca3White">&nbsp;</div></Col>
               </Row>

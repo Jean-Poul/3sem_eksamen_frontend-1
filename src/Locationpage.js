@@ -24,12 +24,10 @@ function Location() {
       .then(data => {
         setNextlaunch(data);
         <MapContainer
-          latitude={data.results[index].pad.latitude}
-          longitude={data.results[index].pad.longitude}
+          latitude={lat}
+          longitude={lon}
         />
         console.log(data);
-        console.log("lat: "+ data.results[index].pad.latitude);
-        console.log("lon: "+ data.results[index].pad.longitude);
       });
   }
 
@@ -156,13 +154,23 @@ function Location() {
                   <br />
                 </Col>
               </Row> */}
+
             </Container >
-            <div className="main-wrapper ">
-              <GoogleApiWrapper
-                latitude={nextlaunch.results[index].pad.latitude}
-                longitude={nextlaunch.results[index].pad.longitude}
-              />
-            </div>
+            <Container>
+              <Row>
+                <Col sm={2}></Col>
+                <Col sm={8}>
+                  <div className="main-wrapper">
+                      <GoogleApiWrapper
+                        latitude={nextlaunch.results[index].pad.latitude}
+                        longitude={nextlaunch.results[index].pad.longitude}
+                      />
+                  </div>
+                </Col>
+                <Col sm={2}></Col>
+              </Row>
+
+            </Container>
           </div >
         </div >
       ) : ('')
