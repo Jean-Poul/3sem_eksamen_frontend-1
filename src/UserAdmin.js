@@ -1,8 +1,8 @@
 
 const UserAdmin = () => {
-    return (
-        <h1>User Admin</h1>
-    )
+  return (
+    <h1>User Admin</h1>
+  )
 }
 
 export default UserAdmin;
