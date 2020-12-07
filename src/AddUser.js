@@ -5,25 +5,24 @@ const AddUser = () => {
   const perfomAddUser = (evt) => {
     evt.preventDefault();
 
-    /*   let options = {
-    method: "POST",
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      userName: document.getElementById("userName").value,
-      password: document.getElementById("password").value
-    })
-  }
-  fetch(URL + "/user", options);
- */
+    let options = {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        userName: document.getElementById("userName").value,
+        password: document.getElementById("password").value
+      })
+    }
+    fetch(URL + "/user", options);
+
 
     console.log("User added");
-    console.log("User: " + document.getElementById("userName"));
-    console.log("Password: " + document.getElementById("password"));
-
+    document.getElementById("userSubmitted").innerHTML = <div class="alert alert-success" role="alert">You've created a user, login above.</div>;
   }
+
 
   return (
     <div>
@@ -36,6 +35,9 @@ const AddUser = () => {
             <h2 className="ca3White">Sign up</h2>
             <Form className="mt-4">
               <Form.Group controlId="userName">
+
+                <div id="userSubmitted" />
+
                 <Form.Label className="ca3White">Username</Form.Label>
                 <Form.Control type="text" placeholder="Enter username" />
               </Form.Group>
