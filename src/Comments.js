@@ -7,6 +7,8 @@ import facade from "./apiFacade";
 
 const Comments = (props) => {
 
+  console.log(parseJwtName(facade.getToken()));
+
   function parseJwtName(name) {
     let tokenName = JSON.parse(atob(name.split('.')[1]));
     return tokenName.username;
@@ -41,7 +43,7 @@ const Comments = (props) => {
             body: JSON.stringify({
                 userComment: document.getElementById("Comment").value,
                 rocketID: props.rocketID,
-                //userID: parseJwtName(facade.getToken())
+                userName: parseJwtName(facade.getToken())
             })
         }
         fetch(URL + "/api/comments", options)
@@ -63,7 +65,7 @@ const Comments = (props) => {
                                     <div key={data.id}>
                                         <Row>
                                             <div>
-                                                <div className="ca3CommentName">Blastoff34 {data.USER_user_name}
+                                                <div className="ca3CommentName">User: {data.userName}
                                                 &nbsp; 
                                                 <div className="ca3CommentInfo">Commented @ {data.created}</div>
                                                 </div>
