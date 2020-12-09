@@ -11,6 +11,7 @@ import WeatherPage from "./Weatherpage";
 import UserAdmin from "./UserAdmin";
 import CommentAdmin from "./CommentAdmin";
 import Login from "./Login";
+import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
 import { Switch, Route, NavLink, useHistory } from "react-router-dom";
 
 const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
@@ -20,6 +21,13 @@ const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
         {/* <Navbar.Brand href="#home">Hold E, Gruppe 8</Navbar.Brand> */}
         <Nav className="mr-auto">
           <NavLink className="nav-link" exact activeClassName="selectedHead" href="/" to="/">
+          <img
+            alt=""
+            src={rocketlaunchlogo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />{' '}
             Hold E, Gruppe 8
         </NavLink>
           {/* <NavLink className="nav-link" activeClassName="selected" to="/jokes">
