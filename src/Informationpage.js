@@ -7,7 +7,7 @@ import { URL } from "./settings";
 import Countdown from "./Countdown";
 import Comments from "./Comments";
 
-function InformationPage() {
+function InformationPage({ isLoggedIn, isAdmin }) {
   const [nextlaunch, setNextlaunch] = useState({});
   const [launchprovider, setLaunchprovider] = useState({});
   let location = useLocation();
@@ -317,18 +317,17 @@ function InformationPage() {
                   <br />
                 </Col>
               </Row>
-              <Row>
-                <Col>
-                 <Comments 
-                 rocketID={nextlaunch.results[index].id}/>
-                </Col>
-              </Row>
+            </Container>
+            <Container>
+              <Comments
+                rocketID={nextlaunch.results[index].id}
+                isLoggedIn={isLoggedIn}
+                isAdmin={isAdmin}
+              />
             </Container>
           </div>
         </div>
-      ) : (
-        ""
-      )}
+      ) : ("")}
     </div>
   );
 }

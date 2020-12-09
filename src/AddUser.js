@@ -32,7 +32,7 @@ const AddUser = () => {
             <h2 className="ca3White">Sign up</h2>
             <Form className="mt-4">
               <Form.Group controlId="userName">
-                <div id="userSubmitted" />
+                <div id="userSubmitted"></div>
 
                 <Form.Label className="ca3White">Username</Form.Label>
                 <Form.Control type="text" placeholder="Enter username" />

@@ -72,9 +72,9 @@ function LoggedIn() {
 
   return (
     <div>
-      <h2>Data Received from server</h2>
+      <h2  className="display-4 text-muted">Data Received from server</h2>
       <h3>{dataFromServer}</h3>
-      <p>{errorMessage}</p>
+      <p className="mt-4 text-danger">{errorMessage}</p>
     </div>
   )
 
@@ -122,14 +122,14 @@ function Login({ setLoginStatus, isLoggedIn, setAdminStatus }) {
       });
   };
 
-
+  console.log("logIn: " + isLoggedIn);
 
   return (
     <div className="pageContent">
       {!isLoggedIn ? (
         <>
           <LogIn login={login} />
-          <p>{errorMessage}</p>
+          <p className="mt-4 text-danger">{errorMessage}</p>
           <br />
           <AddUser />
         </>

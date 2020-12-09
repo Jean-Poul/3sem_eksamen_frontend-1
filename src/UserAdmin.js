@@ -1,7 +1,7 @@
 
 const UserAdmin = () => {
   return (
-    <h1>User Admin</h1>
+    <h1 className="ca3White">User Admin</h1>
   )
 }
 

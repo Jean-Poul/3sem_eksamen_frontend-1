@@ -19,7 +19,7 @@ const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
       <Navbar variant="dark" id="header">
         {/* <Navbar.Brand href="#home">Hold E, Gruppe 8</Navbar.Brand> */}
         <Nav className="mr-auto">
-          <NavLink className="nav-link" exact activeClassName="selected" href="/" to="/">
+          <NavLink className="nav-link" exact activeClassName="selectedHead" href="/" to="/">
             Hold E, Gruppe 8
         </NavLink>
           {/* <NavLink className="nav-link" activeClassName="selected" to="/jokes">
@@ -33,16 +33,16 @@ const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
           )} */}
           {isAdmin && (
             <>
-              <NavLink className="nav-link" activeClassName="selected" to="/comments">
+              <NavLink className="nav-link" activeClassName="selectedHead" to="/comments">
                 Comments
             </NavLink>
 
-              <NavLink className="nav-link" activeClassName="selected" to="/users">
+              <NavLink className="nav-link" activeClassName="selectedHead" to="/users">
                 Users
             </NavLink>
             </>
           )}
-          <NavLink className="nav-link" activeClassName="selected" to="/login-out">
+          <NavLink className="nav-link" activeClassName="selectedHead" to="/login-out">
             {loginMsg}
           </NavLink>
           {isLoggedIn && (
@@ -98,7 +98,10 @@ export default function App() {
             <Scrape />
           </Route> */}
           <Route path="/information">
-            <Information />
+            <Information
+              isLoggedIn={isLoggedIn}
+              isAdmin={isAdmin}
+            />
           </Route>
           <Route path="/location">
             <Location />
@@ -153,10 +156,13 @@ function Comments() {
   );
 }
 
-function Information() {
+function Information({isLoggedIn,isAdmin}) {
   return (
     <div className="pageContent">
-      <InformationPage />
+      <InformationPage
+        isLoggedIn={isLoggedIn}
+        isAdmin={isAdmin}
+      />
     </div>
   );
 }
