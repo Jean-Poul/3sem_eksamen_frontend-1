@@ -73,7 +73,7 @@ function LoggedIn() {
   return (
     <div>
       <h2  className="display-4 text-muted">Data Received from server</h2>
-      <h3>{dataFromServer}</h3>
+      <h3 className="ca3White">{dataFromServer}</h3>
       <p className="mt-4 text-danger">{errorMessage}</p>
     </div>
   )
@@ -136,7 +136,7 @@ function Login({ setLoginStatus, isLoggedIn, setAdminStatus }) {
       ) :
         (<div>
           <LoggedIn />
-          <button onClick={logout}>Logout</button>
+          <button onClick={logout} className="btn btn-secondary">Logout</button>
         </div>)}
 
     </div>
