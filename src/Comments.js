@@ -40,10 +40,33 @@ const Comments = ({ rocketID, isLoggedIn, isAdmin }) => {
       });
   }
 
+  const deleteComment = (evt) => {
+    evt.preventDefault();
+    let id = evt.target.value;
+    console.log("del id: " + id);
+
+    let options = {
+      method: "DELETE",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(URL + "/api/comments/delete/" + id, options)
+      .then(res => {
+        fetchAllComments();
+      });
+  }
+
+  const editComment = (evt) => {
+    evt.preventDefault();
+    let id = evt.target.value;
+    console.log("edit id: " + id);
+
+  }
+
   const submitComment = (evt) => {
     evt.preventDefault();
-
-
 
     let options = {
       method: "POST",
@@ -63,6 +86,7 @@ const Comments = ({ rocketID, isLoggedIn, isAdmin }) => {
         document.getElementById("Comment").value = "";
       });
   }
+
   console.log("rocketID: " + rocketID)
   console.log("isLoggedIn: " + isLoggedIn)
   console.log("isAdmin: " + isAdmin)
@@ -70,7 +94,7 @@ const Comments = ({ rocketID, isLoggedIn, isAdmin }) => {
   let rocketComments = comments.all !== undefined
     ? comments.all.filter(rc => rc.rocketID.includes(rocketID))
     : '';
-  console.log("rc: " + rocketComments)
+
   return (
     <div>
       <div>
@@ -87,7 +111,21 @@ const Comments = ({ rocketID, isLoggedIn, isAdmin }) => {
                       </div>
                     </div>
                   </Col>
-                  <Col sm={3}></Col>
+                  <Col sm={1}>
+                    {(isAdmin) ?
+                      <Button onClick={deleteComment} value={data.id} variant="danger" type="submit" size="sm">
+                        Slet
+                    </Button>
+                      : ''}
+                  </Col>
+                  <Col sm={1}>
+                    {(isLoggedIn && (isLoggedIn && (data.userName === parseJwtName(facade.getToken())))) ?
+                      <Button onClick={editComment} value={data.id} variant="warning" type="submit" size="sm">
+                        edit
+                    </Button>
+                      : ''}
+                  </Col>
+                  <Col sm={1}></Col>
                 </Row>
                 <Row>
                   <Col sm={3}></Col>
