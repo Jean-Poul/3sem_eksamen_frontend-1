@@ -4,6 +4,19 @@ import { Form, Row, Col, Button } from "react-bootstrap";
 import { URL } from "./settings";
 import facade from "./apiFacade";
 
+const dateBuilder = (timestamp) => {
+  let d = new Date(timestamp);
+  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  let date = d.getDate();
+  let month = months[d.getMonth()];
+  let year = d.getFullYear();
+  let hours = (d.getHours() < 10 ? "0" : "") + d.getHours();
+  let minutes = (d.getMinutes() < 10 ? "0" : "") + d.getMinutes();
+  let seconds = (d.getSeconds() < 10 ? "0" : "") + d.getSeconds();
+
+  return `${month} ${date}, ${year} ${hours}:${minutes}:${seconds}`;
+};
 
 const Comments = ({ rocketID, isLoggedIn, isAdmin }) => {
 
@@ -70,7 +83,7 @@ const Comments = ({ rocketID, isLoggedIn, isAdmin }) => {
                   <Col sm={6}>
                     <div>
                       <div className="ca3CommentName ca3Orange">{data.userName}&nbsp;
-                      <div className="ca3CommentInfo ca3Grey">Commented @ {data.created}</div>
+                      <div className="ca3CommentInfo ca3Grey">Commented @ {dateBuilder(data.created)}</div>
                       </div>
                     </div>
                   </Col>
