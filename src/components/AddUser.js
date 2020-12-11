@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
-import { URL } from './settings';
+import { URL } from '../settings';
 
 function handleHttpErrors(res) {
   if (!res.ok) {

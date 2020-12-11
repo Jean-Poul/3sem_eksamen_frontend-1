@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-//import "./ca3.css";
 import { NavLink } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
-import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
-import Compass from './assets/compass.svg';
-import Barometer from './assets/barometer.svg';
-import Humidity from './assets/humidity.svg';
-import Sunrise from './assets/sunrise.svg';
-import Sunset from './assets/sunset.svg';
+import rocketlaunchlogo from "../assets/rocketlaunch_logo_orange_dark_1500.png";
+import Compass from '../assets/compass.svg';
+import Barometer from '../assets/barometer.svg';
+import Humidity from '../assets/humidity.svg';
+import Sunrise from '../assets/sunrise.svg';
+import Sunset from '../assets/sunset.svg';
 import { useLocation, useHistory } from 'react-router-dom'
 import Countdown from "./Countdown";
-import { URL } from "./settings";
+import { URL } from "../settings";
 
 const api = {
   key: process.env.REACT_APP_WEATHER_API_KEY
@@ -25,7 +24,7 @@ function App() {
   let index = (location.launchProp !== undefined) ? location.launchProp.index : history.push("/");
   let lat = (location.launchProp !== undefined) ? location.launchProp.lat : history.push("/");
   let lon = (location.launchProp !== undefined) ? location.launchProp.lon : history.push("/");
-  console.log("index: " + index + " lat: " + lat + " lon: " + lon);
+  
 
   const fetchWeather = () => {
     fetch(`${URL}/api/weather/${lat}/${lon}/${api.key}`)

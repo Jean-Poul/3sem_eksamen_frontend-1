@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
-import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
+import rocketlaunchlogo from "../assets/rocketlaunch_logo_orange_dark_1500.png";
 import { useLocation, useHistory } from 'react-router-dom'
 import Countdown from "./Countdown";
 import MapContainer from "./GoogleMaps";
 import GoogleApiWrapper from "./GoogleMaps"
-import { URL } from "./settings";
+import { URL } from "../settings";
 
 
 function Location() {
@@ -16,8 +16,7 @@ function Location() {
   let index = (location.launchProp !== undefined) ? location.launchProp.index : history.push("/");
   let lat = (location.launchProp !== undefined) ? location.launchProp.lat : history.push("/");
   let lon = (location.launchProp !== undefined) ? location.launchProp.lon : history.push("/");
-  console.log("index: " + index + " lat: " + lat + " lon: " + lon);
-
+  
   const fetchNextlaunch = () => {
     fetch(`${URL}/api/nextlaunch/upcoming`)
       .then(res => res.json())
@@ -27,7 +26,6 @@ function Location() {
           latitude={lat}
           longitude={lon}
         />
-        console.log(data);
       });
   }
 

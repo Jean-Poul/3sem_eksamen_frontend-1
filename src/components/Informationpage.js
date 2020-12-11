@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
-import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
+import rocketlaunchlogo from "../assets/rocketlaunch_logo_orange_dark_1500.png";
 import { useLocation, useHistory } from "react-router-dom";
-import { URL } from "./settings";
+import { URL } from "../settings";
 import Countdown from "./Countdown";
 import Comments from "./Comments";
 
@@ -16,23 +16,20 @@ function InformationPage({ isLoggedIn, isAdmin }) {
     location.launchProp !== undefined
       ? location.launchProp.index
       : history.push("/");
-  console.log(index);
-
+  
   const fetchNextlaunch = () => {
     fetch(`${URL}/api/nextlaunch/upcoming`)
       .then((res) => res.json())
       .then((data) => {
         setNextlaunch(data);
-        console.log(data);
-
+  
         let i = index !== undefined ? index : 0;
 
         fetch(data.results[i].launch_service_provider.url)
           .then((result) => result.json())
           .then((data2) => {
             setLaunchprovider(data2);
-            console.log(data2);
-          });
+            });
       });
   };
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
-import "./ca3.css";
 import { Form, Row, Col, Button } from "react-bootstrap";
-import { URL } from "./settings";
+import { URL } from "../settings";
 import facade from "./apiFacade";
 
 const dateBuilder = (timestamp) => {
@@ -36,15 +35,13 @@ const Comments = ({ rocketID, isLoggedIn, isAdmin }) => {
       .then(res => res.json())
       .then(data => {
         setComments(data);
-        console.log(data)
       });
   }
 
   const deleteComment = (evt) => {
     evt.preventDefault();
     let id = evt.target.value;
-    console.log("del id: " + id);
-
+    
     let options = {
       method: "DELETE",
       headers: {
@@ -61,8 +58,7 @@ const Comments = ({ rocketID, isLoggedIn, isAdmin }) => {
   const editComment = (evt) => {
     evt.preventDefault();
     let id = evt.target.value;
-    console.log("edit id: " + id);
-
+    
   }
 
   const submitComment = (evt) => {
@@ -86,10 +82,6 @@ const Comments = ({ rocketID, isLoggedIn, isAdmin }) => {
         document.getElementById("Comment").value = "";
       });
   }
-
-  console.log("rocketID: " + rocketID)
-  console.log("isLoggedIn: " + isLoggedIn)
-  console.log("isAdmin: " + isAdmin)
 
   let rocketComments = comments.all !== undefined
     ? comments.all.filter(rc => rc.rocketID.includes(rocketID))
