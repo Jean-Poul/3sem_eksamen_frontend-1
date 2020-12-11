@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
-import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
-import { URL } from "./settings";
+import rocketlaunchlogo from "../assets/rocketlaunch_logo_orange_dark_1500.png";
+import { URL } from "../settings";
 import Countdown from "./Countdown";
 
 function Frontpage() {
@@ -13,7 +13,6 @@ function Frontpage() {
       .then(res => res.json())
       .then(data => {
         setNextlaunch(data);
-        console.log(data);
       });
   }
 

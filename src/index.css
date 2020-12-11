@@ -23,6 +23,7 @@ a, a:active, a:focus {
   outline: none;
 }
 
+
 /*----------------
 Weather style
 -----------------*/
@@ -255,6 +256,10 @@ a:hover {
   color: #0FEF4B !important;
 }
 
+.selectedHead {
+  color: #ffffff !important;
+}
+
 /*-------------------------
 Launch HOME
 ---------------------------*/
@@ -367,6 +372,13 @@ comments section
   margin-bottom: 100px;
   background-color: transparent !important;
   border-color: transparent !important;
+}
+
+.ca3LoginComment {
+  background-color: #828282;
+  color: #FFF;
+  padding: 40px 0;
+  margin-bottom: 40px;
 }
 
 /* used in header login */

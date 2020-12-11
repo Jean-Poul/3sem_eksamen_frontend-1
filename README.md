@@ -1,14 +1,12 @@
 # 3 Semester Examination
 
-(Insert travis URL)
-
 <br>
 
 # Group E8 members:
 
 - [Alexander Pihl](https://github.com/AlexanderPihl)
 - [Jean-Poul Leth-Møller](https://github.com/Jean-Poul)
-- Mick Larsen (Me)
+- [Mick Larsen](https://github.com/MivleDK)
 - [Morten Rasmussen]()
 - [Per Kringelbach](https://github.com/cph-pk)
 
