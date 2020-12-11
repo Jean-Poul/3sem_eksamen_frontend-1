@@ -1,7 +1,7 @@
 
 const CommentAdmin = () => {
     return (
-        <h1>Comment Admin</h1>
+        <h1 className="ca3White">Comment Admin</h1>
     )
 }
 

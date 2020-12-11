@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import facade from "./apiFacade";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
+import AddUser from "./AddUser";
 
 
 function LogIn({ login }) {
@@ -71,9 +72,9 @@ function LoggedIn() {
 
   return (
     <div>
-      <h2>Data Received from server</h2>
-      <h3>{dataFromServer}</h3>
-      <p>{errorMessage}</p>
+      <h2  className="display-4 text-muted">Data Received from server</h2>
+      <h3 className="ca3White">{dataFromServer}</h3>
+      <p className="mt-4 text-danger">{errorMessage}</p>
     </div>
   )
 
@@ -121,22 +122,23 @@ function Login({ setLoginStatus, isLoggedIn, setAdminStatus }) {
       });
   };
 
-
+  console.log("logIn: " + isLoggedIn);
 
   return (
     <div className="pageContent">
       {!isLoggedIn ? (
         <>
           <LogIn login={login} />
-          <p>{errorMessage}</p>
+          <p className="mt-4 text-danger">{errorMessage}</p>
+          <br />
+          <AddUser />
         </>
       ) :
         (<div>
           <LoggedIn />
-
-          <button onClick={logout}>Logout</button>
-
+          <button onClick={logout} className="btn btn-secondary">Logout</button>
         </div>)}
+
     </div>
   )
 
