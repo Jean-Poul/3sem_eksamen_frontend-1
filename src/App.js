@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav } from "react-bootstrap";
@@ -13,6 +13,9 @@ import rocketlaunchlogo from "./assets/rocketlaunch_logo_orange_dark_1500.png";
 import { Switch, Route, NavLink, useHistory } from "react-router-dom";
 
 const Header = ({ isLoggedIn, loginMsg, isAdmin, loginName }) => {
+  useEffect(() => {
+    document.title = "RocketLaunch"
+ }, []);
   return (
     <>
       <Navbar variant="dark" id="header">
